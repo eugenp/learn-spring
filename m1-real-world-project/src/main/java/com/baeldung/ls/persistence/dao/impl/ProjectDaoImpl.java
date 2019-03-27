@@ -21,16 +21,17 @@ public class ProjectDaoImpl implements IProjectDao {
 
     @Override
     public Project save(Project project) {
-        Project existingProject = findById(project.getId()).orElse(null);
-        if (existingProject == null) {
-            projects.add(project);
-            return project;
-        } else {
-            projects.remove(existingProject);
-            Project newProject = new Project(project);
-            projects.add(newProject);
-            return project;
-        }
+        return findById(project.getId())
+            .map(existingProject -> {
+                projects.remove(existingProject);
+                Project newProject = new Project(existingProject);
+                projects.add(newProject);
+                return newProject;
+            })
+            .orElseGet(() -> {
+                projects.add(project);
+                return project;
+            });
     }
 
 }
