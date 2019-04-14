@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.baeldung.ls.persistence.dao.IProjectDao;
 import com.baeldung.ls.persistence.model.Project;
 
-@Component
+@Repository
 public class ProjectDaoImpl implements IProjectDao {
 
     List<Project> projects = new ArrayList<>();
