@@ -1,4 +1,4 @@
-package com.baeldung.ls.persistence.dao.impl;
+package com.baeldung.ls.persistence.repository.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,11 +6,11 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
-import com.baeldung.ls.persistence.dao.IProjectDao;
 import com.baeldung.ls.persistence.model.Project;
+import com.baeldung.ls.persistence.repository.IProjectRepository;
 
 @Repository
-public class ProjectDaoImpl implements IProjectDao {
+public class ProjectRepositoryImpl implements IProjectRepository {
 
     private List<Project> projects = new ArrayList<>();
 
