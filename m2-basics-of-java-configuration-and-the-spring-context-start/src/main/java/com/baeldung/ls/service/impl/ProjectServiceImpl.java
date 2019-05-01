@@ -2,34 +2,34 @@ package com.baeldung.ls.service.impl;
 
 import java.util.Optional;
 
-import com.baeldung.ls.persistence.dao.IProjectDao;
 import com.baeldung.ls.persistence.model.Project;
+import com.baeldung.ls.persistence.repository.IProjectRepository;
 import com.baeldung.ls.service.IProjectService;
 
 public class ProjectServiceImpl implements IProjectService {
 
-    private IProjectDao projectDao;
+    private IProjectRepository projectRepository;
 
-    public ProjectServiceImpl(IProjectDao projectDao) {
-        this.projectDao = projectDao;
+    public ProjectServiceImpl(IProjectRepository projectRepository) {
+        this.projectRepository = projectRepository;
     }
 
     @Override
     public Optional<Project> findById(Long id) {
-        return projectDao.findById(id);
+        return projectRepository.findById(id);
     }
 
     @Override
     public Project save(Project project) {
-        return projectDao.save(project);
+        return projectRepository.save(project);
     }
 
-    public IProjectDao getProjectDao() {
-        return projectDao;
+    public IProjectRepository getProjectRepository() {
+        return projectRepository;
     }
 
-    public void setProjectDao(IProjectDao projectDao) {
-        this.projectDao = projectDao;
+    public void setProjectRepository(IProjectRepository projectRepository) {
+        this.projectRepository = projectRepository;
     }
 
 }
