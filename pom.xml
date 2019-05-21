@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <description>The &quot;Learn Spring&quot; Course Module 6</description>
+    <name>learn-spring-m6</name>
+
+    <groupId>com.baeldung</groupId>
+    <artifactId>learn-spring-m6</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>m6-what-is-spring-mvc-lesson-start</module>
+        <module>m6-what-is-spring-mvc-lesson-end</module>
+        <module>m6-expanding-our-first-controller-start</module>
+        <module>m6-expanding-our-first-controller-end</module>
+        <module>m6-testing-with-boot-2-start</module>
+        <module>m6-testing-with-boot-2-end</module>
+    </modules>
+
+</project>

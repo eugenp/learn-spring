@@ -1,23 +1,44 @@
 package com.baeldung.ls.persistence.model;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Project {
 
+    @Id
     private Long id;
 
     private String name;
 
     private LocalDate dateCreated;
 
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "project_id")
+    private Set<Task> tasks;
+
     public Project(Long id, String name, LocalDate dateCreated) {
         this.id = id;
         this.name = name;
         this.dateCreated = dateCreated;
+        this.tasks = new HashSet<>();
+    }
+
+    protected Project() {
     }
 
     public Project(Project project) {
         this(project.getId(), project.getName(), project.getDateCreated());
+        this.tasks = project.getTasks().stream().collect(Collectors.toSet());
     }
 
     public Long getId() {
@@ -44,6 +65,14 @@ public class Project {
         this.dateCreated = dateCreated;
     }
 
+    public Set<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(Set<Task> tasks) {
+        this.tasks = tasks;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -51,6 +80,7 @@ public class Project {
         result = prime * result + ((dateCreated == null) ? 0 : dateCreated.hashCode());
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + ((tasks == null) ? 0 : tasks.hashCode());
         return result;
     }
 
@@ -78,12 +108,17 @@ public class Project {
                 return false;
         } else if (!name.equals(other.name))
             return false;
+        if (tasks == null) {
+            if (other.tasks != null)
+                return false;
+        } else if (!tasks.equals(other.tasks))
+            return false;
         return true;
     }
 
     @Override
     public String toString() {
-        return "Project [id=" + id + ", name=" + name + "] \n";
+        return "Project [id=" + id + ", name=" + name + ", tasks=" + tasks + "] \n";
     }
 
 }

@@ -1,12 +1,8 @@
 package com.baeldung.ls.persistence.repository;
 
-import java.util.Optional;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.baeldung.ls.persistence.model.Project;
 
-public interface IProjectRepository {
-
-    Optional<Project> findById(Long id);
-
-    Project save(Project project);
+public interface IProjectRepository extends PagingAndSortingRepository<Project, Long> {
 }
