@@ -23,7 +23,7 @@ public class LsApp {
 
     @PostConstruct
     public void postConstruct() {
-        Project project = new Project(1L, "My First Project", LocalDate.now());
+        Project project = new Project("My First Project", LocalDate.now());
         projectService.save(project);
     }
 }

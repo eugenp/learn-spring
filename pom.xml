@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <description>The &quot;Learn Spring&quot; Course Module 3</description>
+    <name>learn-spring-m3</name>
+
+    <groupId>com.baeldung</groupId>
+    <artifactId>learn-spring-m3</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>m3-working-with-properties-start</module>
+        <module>m3-working-with-properties-end</module>
+        <module>m3-working-with-profiles-start</module>
+        <module>m3-working-with-profiles-end</module>
+        <module>m3-logging-in-a-spring-boot-project-start</module>
+        <module>m3-logging-in-a-spring-boot-project-end</module>
+        <module>m3-deploying-a-spring-boot-project</module>
+        <module>m3-spring-testing-framework-lesson-start</module>
+        <module>m3-spring-testing-framework-lesson-end</module>
+    </modules>
+
+</project>

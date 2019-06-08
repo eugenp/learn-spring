@@ -20,5 +20,5 @@ public class ContextIntegrationTest {
     public void whenContextIsLoaded2_thenNoExceptions() {
         System.out.println();
     }
-    
+
 }

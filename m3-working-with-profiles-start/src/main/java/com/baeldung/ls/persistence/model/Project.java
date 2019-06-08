@@ -1,6 +1,7 @@
 package com.baeldung.ls.persistence.model;
 
 import java.time.LocalDate;
+import java.util.Random;
 
 public class Project {
 
@@ -10,18 +11,14 @@ public class Project {
 
     private LocalDate dateCreated;
 
-    public Project() {
-
-    }
-
-    public Project(Long id, String name, LocalDate dateCreated) {
-        this.id = id;
+    public Project(String name, LocalDate dateCreated) {
+        this.id = new Random().nextLong();
         this.name = name;
         this.dateCreated = dateCreated;
     }
 
     public Project(Project project) {
-        this(project.getId(), project.getName(), project.getDateCreated());
+        this(project.getName(), project.getDateCreated());
     }
 
     public Long getId() {
