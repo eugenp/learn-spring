@@ -1,6 +1,6 @@
 package com.baeldung.ls.service.impl;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertNotNull;
 
 import java.time.LocalDate;
 
@@ -21,8 +21,8 @@ public class ProjectServiceImplIntegrationTest {
 
     @Test
     public void givenNewProject_thenSavedSuccess() {
-        Project newProject = new Project(1L, "First Project", LocalDate.now());
+        Project newProject = new Project("First Project", LocalDate.now());
 
-        assertThat(projectServiceImpl.save(newProject)).isNotNull();
+        assertNotNull(projectServiceImpl.save(newProject));
     }
 }
