@@ -4,16 +4,16 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.baeldung.ls.persistence.dao.ITaskDao;
 import com.baeldung.ls.persistence.model.Task;
+import com.baeldung.ls.persistence.repository.ITaskRepository;
 import com.baeldung.ls.service.ITaskService;
 
 @Service
 public class TaskServiceImpl implements ITaskService {
-    
-    private ITaskDao taskDao;
 
-    public TaskServiceImpl(ITaskDao taskDao) {
+    private ITaskRepository taskDao;
+
+    public TaskServiceImpl(ITaskRepository taskDao) {
         this.taskDao = taskDao;
     }
 

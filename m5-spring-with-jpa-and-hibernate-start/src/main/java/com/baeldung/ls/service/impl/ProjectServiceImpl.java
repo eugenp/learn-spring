@@ -4,16 +4,16 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.baeldung.ls.persistence.dao.IProjectDao;
 import com.baeldung.ls.persistence.model.Project;
+import com.baeldung.ls.persistence.repository.IProjectRepository;
 import com.baeldung.ls.service.IProjectService;
 
 @Service
 public class ProjectServiceImpl implements IProjectService {
 
-    private IProjectDao projectDao;
+    private IProjectRepository projectDao;
 
-    public ProjectServiceImpl(IProjectDao projectDao) {
+    public ProjectServiceImpl(IProjectRepository projectDao) {
         this.projectDao = projectDao;
     }
 

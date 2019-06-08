@@ -3,20 +3,21 @@ package com.baeldung.ls.persistence.model;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Project {
 
     @Id
+    @GeneratedValue
     private Long id;
 
     private String name;
 
     private LocalDate dateCreated;
 
-    public Project(Long id, String name, LocalDate dateCreated) {
-        this.id = id;
+    public Project(String name, LocalDate dateCreated) {
         this.name = name;
         this.dateCreated = dateCreated;
     }
@@ -25,7 +26,7 @@ public class Project {
     }
 
     public Project(Project project) {
-        this(project.getId(), project.getName(), project.getDateCreated());
+        this(project.getName(), project.getDateCreated());
     }
 
     public Long getId() {

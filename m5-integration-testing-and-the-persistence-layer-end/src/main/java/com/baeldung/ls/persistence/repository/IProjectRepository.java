@@ -18,5 +18,5 @@ public interface IProjectRepository extends PagingAndSortingRepository<Project, 
     @Query("select p from Project p where p.name like %?1%")
     List<Project> findByNameMatches(String name);
 
-    List<Project> findAllByOrderByNameDesc();    
+    List<Project> findAllByOrderByNameDesc();
 }

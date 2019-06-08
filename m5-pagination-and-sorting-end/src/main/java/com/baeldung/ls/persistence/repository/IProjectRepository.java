@@ -13,6 +13,6 @@ public interface IProjectRepository extends PagingAndSortingRepository<Project, 
     Optional<Project> findByName(String name);
 
     List<Project> findByDateCreatedBetween(LocalDate start, LocalDate end);
-    
+
     List<Project> findAllByOrderByNameDesc();
 }

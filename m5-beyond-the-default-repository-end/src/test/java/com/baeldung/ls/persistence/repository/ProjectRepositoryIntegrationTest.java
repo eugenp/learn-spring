@@ -1,20 +1,21 @@
 package com.baeldung.ls.persistence.repository;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
+import static org.hamcrest.CoreMatchers.hasItems;
+import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import com.baeldung.ls.persistence.model.Project;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class ProjectRepositoryIntegrationTest {
 
@@ -22,41 +23,43 @@ public class ProjectRepositoryIntegrationTest {
     IProjectRepository projectRepository;
 
     @Test
-    public void givenNewProject_thenSavedSuccess() {
-        Project newProject = new Project(1L, "First Project", LocalDate.now());
-        assertThat(projectRepository.save(newProject)).isNotNull();
+    public void whenSavingNewProject_thenSuccess() {
+        Project newProject = new Project(randomAlphabetic(6), LocalDate.now());
+
+        assertNotNull(projectRepository.save(newProject));
     }
 
     @Test
-    public void givenProjectCreated_thenFindByIdSuccess() {
-        Project newProject = new Project(1L, "First Project", LocalDate.now());
+    public void givenProject_whenFindById_thenSuccess() {
+        Project newProject = new Project(randomAlphabetic(6), LocalDate.now());
         projectRepository.save(newProject);
 
-        Optional<Project> retreivedProject = projectRepository.findById(1L);
-        assertThat(retreivedProject.get()).isEqualTo(newProject);
+        Optional<Project> retreivedProject = projectRepository.findById(newProject.getId());
+
+        assertEquals(retreivedProject.get(), newProject);
     }
 
     @Test
-    public void givenProjectCreated_thenFindByNameSuccess() {
-        Project newProject = new Project(1L, "First Project", LocalDate.now());
+    public void givenProjectCreated_whenFindByName_thenSuccess() {
+        Project newProject = new Project(randomAlphabetic(6), LocalDate.now());
         projectRepository.save(newProject);
 
-        Optional<Project> retreivedProject = projectRepository.findByName("First Project");
-        assertThat(retreivedProject.get()).isEqualTo(newProject);
+        Optional<Project> retreivedProject = projectRepository.findByName(newProject.getName());
+        assertEquals(retreivedProject.get(), newProject);
     }
 
     @Test
-    public void givenProjectCreated_thenFindByDateCreatedBetweenSuccess() {
-        Project oldProject = new Project(1L, "Old Project", LocalDate.now().minusYears(1));
+    public void givenProjectCreated_whenFindByDateCreatedBetween_thenSuccess() {
+        Project oldProject = new Project(randomAlphabetic(6), LocalDate.now().minusYears(1));
         projectRepository.save(oldProject);
 
-        Project newProject = new Project(2L, "New Project", LocalDate.now());
+        Project newProject = new Project(randomAlphabetic(6), LocalDate.now());
         projectRepository.save(newProject);
 
-        Project newProject2 = new Project(3L, "New Project", LocalDate.now());
+        Project newProject2 = new Project(randomAlphabetic(6), LocalDate.now());
         projectRepository.save(newProject2);
 
         List<Project> retreivedProjects = projectRepository.findByDateCreatedBetween(LocalDate.now().minusDays(1), LocalDate.now().plusDays(1));
-        assertThat(retreivedProjects).contains(newProject, newProject2);
+        assertThat(retreivedProjects, hasItems(newProject, newProject2));
     }
 }

@@ -3,6 +3,7 @@ package com.baeldung.ls.persistence.model;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,11 +27,16 @@ public class Task {
 
     private TaskStatus status;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "project_id", nullable = true)
     private Project project;
 
     public Task() {
+        this(null, null, null, null, null);
+    }
+
+    public Task(String name, String description, LocalDate dateCreated, LocalDate dueDate) {
+        this(null, name, description, dateCreated, dueDate);
     }
 
     public Task(Long id, String name, String description, LocalDate dateCreated, LocalDate dueDate) {

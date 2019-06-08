@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <description>The &quot;Learn Spring&quot; Course Module 5</description>
+    <name>learn-spring-m5</name>
+
+    <groupId>com.baeldung</groupId>
+    <artifactId>learn-spring-m5</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>m5-project-persistence-with-spring-data-jpa-start</module>
+        <module>m5-project-persistence-with-spring-data-jpa-end</module>
+        <module>m5-beyond-the-default-repository-start</module>
+        <module>m5-beyond-the-default-repository-end</module>
+        <module>m5-spring-with-jpa-and-hibernate-start</module>
+        <module>m5-spring-with-jpa-and-hibernate-end</module>
+        <module>m5-pagination-and-sorting-start</module>
+        <module>m5-pagination-and-sorting-end</module>
+        <module>m5-integration-testing-and-the-persistence-layer-start</module>
+        <module>m5-integration-testing-and-the-persistence-layer-end</module>
+    </modules>
+
+</project>

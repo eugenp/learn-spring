@@ -4,10 +4,13 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -20,21 +23,26 @@ public class Project {
 
     private LocalDate dateCreated;
 
-    @OneToMany(mappedBy = "project")
-    private Set<Task> tasks;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "project_id")
+    private Set<Task> tasks = new HashSet<Task>();
 
     public Project() {
-
     }
 
-    public Project(Long id, String name, LocalDate dateCreated) {
+    public Project(String name, LocalDate dateCreated) {
+        this(null, name, dateCreated, new HashSet<Task>());
+    }
+
+    public Project(Long id, String name, LocalDate dateCreated, Set<Task> tasks) {
         this.id = id;
         this.name = name;
         this.dateCreated = dateCreated;
+        this.tasks = tasks;
     }
 
     public Project(Project project) {
-        this(project.getId(), project.getName(), project.getDateCreated());
+        this(project.getId(), project.getName(), project.getDateCreated(), project.getTasks());
     }
 
     public Long getId() {
@@ -72,14 +80,12 @@ public class Project {
      * @param tasks the tasks to set
      */
     public void setTasks(Set<Task> tasks) {
-        this.tasks = tasks;
+        tasks.forEach(task -> addTask(task));
     }
 
     public void addTask(Task task) {
-        if (tasks == null) {
-            tasks = new HashSet<>();
-        }
         tasks.add(task);
+        task.setProject(this);
     }
 
     @Override
@@ -131,10 +137,8 @@ public class Project {
         builder.append(name);
         builder.append(", dateCreated=");
         builder.append(dateCreated);
-        if (tasks != null) {
-            builder.append(", tasks=");
-            builder.append(tasks);
-        }
+        builder.append(", tasks=");
+        builder.append(tasks);
         builder.append("]");
         return builder.toString();
     }

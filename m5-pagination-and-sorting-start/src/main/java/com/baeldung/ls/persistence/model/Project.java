@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -16,6 +17,7 @@ import javax.persistence.OneToMany;
 public class Project {
 
     @Id
+    @GeneratedValue
     private Long id;
 
     private String name;
@@ -26,8 +28,7 @@ public class Project {
     @JoinColumn(name = "project_id")
     private Set<Task> tasks;
 
-    public Project(Long id, String name, LocalDate dateCreated) {
-        this.id = id;
+    public Project(String name, LocalDate dateCreated) {
         this.name = name;
         this.dateCreated = dateCreated;
         this.tasks = new HashSet<>();
@@ -37,7 +38,7 @@ public class Project {
     }
 
     public Project(Project project) {
-        this(project.getId(), project.getName(), project.getDateCreated());
+        this(project.getName(), project.getDateCreated());
         this.tasks = project.getTasks().stream().collect(Collectors.toSet());
     }
 
