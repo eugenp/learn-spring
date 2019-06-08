@@ -2,12 +2,14 @@ package com.baeldung.ls.web.controller;
 
 import java.time.LocalDate;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.baeldung.ls.persistence.model.Project;
 import com.baeldung.ls.service.IProjectService;
@@ -26,7 +28,7 @@ public class ProjectController {
 
     @GetMapping(value = "/{id}")
     public Project findOne(@PathVariable Long id) {
-        return this.projectService.findById(id).orElse(new Project(id,"TEST", LocalDate.now()));
+        return projectService.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping

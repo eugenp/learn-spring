@@ -14,7 +14,7 @@ public class ProjectController {
 
     @GetMapping(path = "/1")
     public Project findOne() {
-        return new Project(0l, "testName", LocalDate.now());
+        return new Project("testName", LocalDate.now());
     }
 
 }

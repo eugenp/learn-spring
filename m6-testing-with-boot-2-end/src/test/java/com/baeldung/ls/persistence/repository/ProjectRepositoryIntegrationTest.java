@@ -18,7 +18,7 @@ public class ProjectRepositoryIntegrationTest {
 
     @Test
     public void givenNewProject_thenSavedSuccess() {
-        Project newProject = new Project(1L, "First Project", LocalDate.now());
+        Project newProject = new Project("First Project", LocalDate.now());
         assertNotNull(projectRepository.save(newProject));
     }
 

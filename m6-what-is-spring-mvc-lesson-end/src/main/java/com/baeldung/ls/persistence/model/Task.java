@@ -3,12 +3,14 @@ package com.baeldung.ls.persistence.model;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Task {
 
     @Id
+    @GeneratedValue
     private Long id;
 
     private String name;
@@ -25,8 +27,7 @@ public class Task {
 
     }
 
-    public Task(Long id, String name, String description, LocalDate dateCreated, LocalDate dueDate) {
-        this.id = id;
+    public Task(String name, String description, LocalDate dateCreated, LocalDate dueDate) {
         this.name = name;
         this.description = description;
         this.dateCreated = dateCreated;
@@ -35,7 +36,7 @@ public class Task {
     }
 
     public Task(Task task) {
-        this(task.getId(), task.getName(), task.getDescription(), task.getDateCreated(), task.getDueDate());
+        this(task.getName(), task.getDescription(), task.getDateCreated(), task.getDueDate());
     }
 
     public Long getId() {
