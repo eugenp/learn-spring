@@ -1,48 +1,37 @@
 package com.baeldung.ls.persistence.model;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Project {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
 
     private String name;
 
     private LocalDate dateCreated;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "project_id")
-    private Set<Task> tasks = new HashSet<Task>();
-
     public Project() {
     }
 
     public Project(String name, LocalDate dateCreated) {
-        this(null, name, dateCreated, new HashSet<Task>());
+        this(null, name, dateCreated);
     }
 
-    public Project(Long id, String name, LocalDate dateCreated, Set<Task> tasks) {
+    public Project(Long id, String name, LocalDate dateCreated) {
         this.id = id;
         this.name = name;
         this.dateCreated = dateCreated;
-        this.tasks = tasks;
     }
 
     public Project(Project project) {
-        this(project.getId(), project.getName(), project.getDateCreated(), project.getTasks());
+        this(project.getId(), project.getName(), project.getDateCreated());
     }
 
     public Long getId() {
@@ -67,25 +56,6 @@ public class Project {
 
     public void setDateCreated(LocalDate dateCreated) {
         this.dateCreated = dateCreated;
-    }
-
-    /**
-     * @return the tasks
-     */
-    public Set<Task> getTasks() {
-        return tasks;
-    }
-
-    /**
-     * @param tasks the tasks to set
-     */
-    public void setTasks(Set<Task> tasks) {
-        tasks.forEach(task -> addTask(task));
-    }
-
-    public void addTask(Task task) {
-        tasks.add(task);
-        task.setProject(this);
     }
 
     @Override
@@ -138,7 +108,6 @@ public class Project {
         builder.append(", dateCreated=");
         builder.append(dateCreated);
         builder.append(", tasks=");
-        builder.append(tasks);
         builder.append("]");
         return builder.toString();
     }

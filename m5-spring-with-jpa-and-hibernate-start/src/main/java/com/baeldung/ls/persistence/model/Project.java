@@ -1,24 +1,37 @@
 package com.baeldung.ls.persistence.model;
 
 import java.time.LocalDate;
-import java.util.Random;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Project {
 
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String name;
 
     private LocalDate dateCreated;
 
+    public Project() {
+    }
+
     public Project(String name, LocalDate dateCreated) {
-        this.id = new Random().nextLong();
+        this(null, name, dateCreated);
+    }
+
+    public Project(Long id, String name, LocalDate dateCreated) {
+        this.id = id;
         this.name = name;
         this.dateCreated = dateCreated;
     }
 
     public Project(Project project) {
-        this(project.getName(), project.getDateCreated());
+        this(project.getId(), project.getName(), project.getDateCreated());
     }
 
     public Long getId() {
@@ -82,9 +95,21 @@ public class Project {
         return true;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
-        return "Project [id=" + id + ", name=" + name + "] \n";
+        StringBuilder builder = new StringBuilder();
+        builder.append("Project [id=");
+        builder.append(id);
+        builder.append(", name=");
+        builder.append(name);
+        builder.append(", dateCreated=");
+        builder.append(dateCreated);
+        builder.append(", tasks=");
+        builder.append("]");
+        return builder.toString();
     }
 
 }

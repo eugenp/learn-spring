@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.time.LocalDate;
 import java.util.Optional;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.baeldung.ls.persistence.model.Project;
 
 @SpringBootTest
+@Disabled
 public class ProjectRepositoryIntegrationTest {
 
     @Autowired

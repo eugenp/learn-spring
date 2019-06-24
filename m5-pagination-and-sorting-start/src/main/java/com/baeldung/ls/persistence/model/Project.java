@@ -24,6 +24,9 @@ public class Project {
 
     private LocalDate dateCreated;
 
+    protected Project() {
+    }
+
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "project_id")
     private Set<Task> tasks;
@@ -32,9 +35,6 @@ public class Project {
         this.name = name;
         this.dateCreated = dateCreated;
         this.tasks = new HashSet<>();
-    }
-
-    protected Project() {
     }
 
     public Project(Project project) {

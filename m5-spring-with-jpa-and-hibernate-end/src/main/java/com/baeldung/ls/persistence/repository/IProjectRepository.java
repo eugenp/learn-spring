@@ -1,6 +1,5 @@
 package com.baeldung.ls.persistence.repository;
 
-import java.util.List;
 import java.util.Optional;
 
 import com.baeldung.ls.persistence.model.Project;
@@ -11,5 +10,4 @@ public interface IProjectRepository {
 
     Project save(Project project);
 
-    List<Project> getAll();
 }

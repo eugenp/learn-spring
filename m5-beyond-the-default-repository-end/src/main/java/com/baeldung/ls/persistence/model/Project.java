@@ -28,13 +28,13 @@ public class Project {
     @JoinColumn(name = "project_id")
     private Set<Task> tasks;
 
+    protected Project() {
+    }
+
     public Project(String name, LocalDate dateCreated) {
         this.name = name;
         this.dateCreated = dateCreated;
         this.tasks = new HashSet<>();
-    }
-
-    protected Project() {
     }
 
     public Project(Project project) {

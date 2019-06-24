@@ -17,12 +17,12 @@ public class Project {
 
     private LocalDate dateCreated;
 
+    protected Project() {
+    }
+
     public Project(String name, LocalDate dateCreated) {
         this.name = name;
         this.dateCreated = dateCreated;
-    }
-
-    protected Project() {
     }
 
     public Project(Project project) {
