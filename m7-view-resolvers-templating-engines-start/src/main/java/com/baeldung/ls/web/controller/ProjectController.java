@@ -1,8 +1,8 @@
 package com.baeldung.ls.web.controller;
 
-import java.time.LocalDate;
 import java.util.stream.Collectors;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.baeldung.ls.persistence.model.Project;
 import com.baeldung.ls.persistence.model.Task;
@@ -31,14 +32,13 @@ public class ProjectController {
 
     @GetMapping(value = "/{id}")
     public ProjectDto findOne(@PathVariable Long id) {
-        Project entity = projectService.findById(id).orElse(null);
+        Project entity = projectService.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return convertToDto(entity);
     }
 
     @PostMapping
     public void create(@RequestBody ProjectDto newProject) {
         Project entity = convertToEntity(newProject);
-        entity.setDateCreated(LocalDate.now());
         this.projectService.save(entity);
     }
 

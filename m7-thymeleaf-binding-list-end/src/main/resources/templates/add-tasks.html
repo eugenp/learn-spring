@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Project</title>
+</head>
+<body>
+	<h2>
+		Add New Tasks to Project <span th:text="${project.name}">Name</span>
+	</h2>
+
+	<form th:action="@{/projects/{id}/save-tasks(id=${project.id})}"
+		th:object="${tasksForm}" method="post">
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Due Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="task, iterStat : *{tasks}">
+					<td><input th:field="*{tasks[__${iterStat.index}__].name}" /></td>
+					<td><input th:field="*{tasks[__${iterStat.index}__].dueDate}"
+						type="date" /></td>
+				</tr>
+			</tbody>
+		</table>
+		<input type="submit" th:value="Save">
+	</form>
+
+</body>
+</html>

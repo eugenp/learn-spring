@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <description>The &quot;Learn Spring&quot; Course Module 7</description>
+    <name>learn-spring-m7</name>
+
+    <groupId>com.baeldung</groupId>
+    <artifactId>learn-spring-m7</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>m7-view-resolvers-templating-engines-start</module>
+        <module>m7-view-resolvers-templating-engines-end</module>
+        <module>m7-other-templating-engines-start</module>
+        <module>m7-other-templating-engines-end</module>
+        <module>m7-getting-the-most-out-of-thymeleaf-start</module>
+        <module>m7-getting-the-most-out-of-thymeleaf-end</module>
+        <module>m7-the-basics-of-form-validation-start</module>
+        <module>m7-the-basics-of-form-validation-end</module>
+    </modules>
+
+</project>

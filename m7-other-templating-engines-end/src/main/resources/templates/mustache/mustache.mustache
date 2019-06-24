@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<title>Learn Spring | M4 L7</title>
+</head>
+<body>
+    <div class="container">
+        <div class="col-sm-5">
+            {{#projects}}
+            <h1>{{name}}</h1>
+            Tasks:
+            <ol> 
+                {{#tasks}}
+                    <li>{{name}}: {{description}}</li>
+                {{/tasks}}
+            </ol>
+            {{/projects}}
+            </div>
+    </div>
+</body>
+</html>
