@@ -8,6 +8,6 @@ public class SpringContextIntegrationTest {
 
     @Test
     public void whenContextIsLoaded_thenNoExceptions() {
-        
+
     }
 }

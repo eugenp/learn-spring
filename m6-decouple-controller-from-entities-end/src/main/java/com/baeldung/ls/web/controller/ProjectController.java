@@ -1,6 +1,5 @@
 package com.baeldung.ls.web.controller;
 
-import java.time.LocalDate;
 import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
@@ -58,7 +57,7 @@ public class ProjectController {
         }
         return project;
     }
-    
+
     protected TaskDto convertTaskToDto(Task entity) {
         TaskDto dto = new TaskDto(entity.getId(), entity.getName(), entity.getDescription(), entity.getDateCreated(), entity.getDueDate(), entity.getStatus());
         return dto;
@@ -71,6 +70,5 @@ public class ProjectController {
         }
         return task;
     }
-
 
 }

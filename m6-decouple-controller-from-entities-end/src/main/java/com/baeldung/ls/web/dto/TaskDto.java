@@ -2,6 +2,8 @@ package com.baeldung.ls.web.dto;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.baeldung.ls.persistence.model.TaskStatus;
 
 public class TaskDto {
@@ -11,13 +13,16 @@ public class TaskDto {
 
     private String description;
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dateCreated;
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dueDate;
 
     private TaskStatus status;
-    
-    public TaskDto () {}
+
+    public TaskDto() {
+    }
 
     public TaskDto(Long id, String name, String description, LocalDate dateCreated, LocalDate dueDate, TaskStatus status) {
         this.id = id;
@@ -75,5 +80,5 @@ public class TaskDto {
     public void setStatus(TaskStatus status) {
         this.status = status;
     }
-    
+
 }

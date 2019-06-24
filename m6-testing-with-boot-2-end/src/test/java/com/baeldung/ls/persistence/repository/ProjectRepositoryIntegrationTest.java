@@ -17,7 +17,7 @@ public class ProjectRepositoryIntegrationTest {
     private IProjectRepository projectRepository;
 
     @Test
-    public void givenNewProject_thenSavedSuccess() {
+    public void whenSavingNewProject_thenSuccess() {
         Project newProject = new Project("First Project", LocalDate.now());
         assertNotNull(projectRepository.save(newProject));
     }
