@@ -12,12 +12,15 @@
     <modules>
         <module>m7-view-resolvers-templating-engines-start</module>
         <module>m7-view-resolvers-templating-engines-end</module>
-        <module>m7-other-templating-engines-start</module>
-        <module>m7-other-templating-engines-end</module>
-        <module>m7-getting-the-most-out-of-thymeleaf-start</module>
-        <module>m7-getting-the-most-out-of-thymeleaf-end</module>
+        <module>m7-spring-mvc-freemarker-template-engine-start</module>
+        <module>m7-spring-mvc-freemarker-template-engine-end</module>
+        <module>m7-spring-mvc-mustache-template-engine-start</module>
+        <module>m7-spring-mvc-mustache-template-engine-end</module>
+        <module>m7-full-create-operation-with-thymeleaf-start</module>
+        <module>m7-full-create-operation-with-thymeleaf-end</module>
         <module>m7-the-basics-of-form-validation-start</module>
         <module>m7-the-basics-of-form-validation-end</module>
+
     </modules>
 
 </project>
