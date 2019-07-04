@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class Task {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -35,7 +35,7 @@ public class Task {
         this.dueDate = dueDate;
         this.status = TaskStatus.TO_DO;
     }
-    
+
     public Task(String name, String description, LocalDate dateCreated, LocalDate dueDate, TaskStatus status) {
         this.name = name;
         this.description = description;
@@ -150,7 +150,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task [id=" + id + ", name=" + name + ", status=" + status.getLabel() + "]\n";
+        return "Task [id=" + id + ", name=" + name + ", status=" + status + "]\n";
     }
 
 }

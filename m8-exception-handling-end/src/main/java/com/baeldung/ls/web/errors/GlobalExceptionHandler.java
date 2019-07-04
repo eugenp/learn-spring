@@ -8,25 +8,19 @@ import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
-import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @ControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(ResponseStatusException.class)
-    public ResponseEntity<String> handleResponseException(ResponseStatusException ex) {
-        return new ResponseEntity<String>("Exception caught:" + ex.getMessage(), ex.getStatus());
-    }
-
     @ExceptionHandler(DataRetrievalFailureException.class)
     public ResponseEntity<String> handleDataRetrievalException(DataRetrievalFailureException ex) {
-        return new ResponseEntity<String>("Exception retrieving data:" + ex.getMessage(), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<String>("Exception retrieving data: " + ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
     @Override
     public ResponseEntity<Object> handleHttpMediaTypeNotSupported(HttpMediaTypeNotSupportedException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-        return new ResponseEntity<>("Media Type not supported:" + ex.getMessage(), HttpStatus.UNSUPPORTED_MEDIA_TYPE);
+        return new ResponseEntity<>("Media Type not supported: " + ex.getMessage(), HttpStatus.UNSUPPORTED_MEDIA_TYPE);
     }
 
 }

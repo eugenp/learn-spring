@@ -1,9 +1,11 @@
 package com.baeldung.ls.web.controller;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.util.StringUtils;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
@@ -38,7 +41,7 @@ public class ProjectController {
 
     @GetMapping(value = "/{id}")
     public ProjectDto findOne(@PathVariable Long id) {
-        Project entity = projectService.findById(id).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        Project entity = projectService.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return convertToDto(entity);
     }
 
@@ -51,9 +54,14 @@ public class ProjectController {
     }
 
     @GetMapping
-    public Collection<ProjectDto> findAll() {
+    public Collection<ProjectDto> findAllByName(@RequestParam("name") Optional<String> name) {
         Iterable<Project> allProjects = this.projectService.findAll();
-        return StreamSupport.stream(allProjects.spliterator(), false).map(this::convertToDto).collect(Collectors.toSet());
+        List<ProjectDto> projectDtos = new ArrayList<>();
+        allProjects.forEach(p -> {
+            if (!name.isPresent() || name.get().equals(p.getName()))
+                projectDtos.add(convertToDto(p));
+        });
+        return projectDtos;
     }
 
     @PutMapping("/{id}")

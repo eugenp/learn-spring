@@ -61,6 +61,15 @@ public class ProjectControllerIntegrationTest {
             .andExpect(jsonPath("$", hasSize(greaterThanOrEqualTo(2))));
         // @formatter:on
     }
+    
+    @Test
+    public void givenDefaultProjectsPersisted_whenRequestProjectsByName_thenRetrieveListWithEntities() throws Exception {
+        // @formatter:off
+        this.mvc.perform(get("/projects?name=Project 1"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$", hasSize(is(1))));
+        // @formatter:on
+    }
 
     @Test
     public void givenDefaultProjectsPersisted_whenRequestProjectById_thenRetrieveEntity() throws Exception {

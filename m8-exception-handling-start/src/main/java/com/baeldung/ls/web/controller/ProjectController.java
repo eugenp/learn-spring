@@ -1,9 +1,10 @@
 package com.baeldung.ls.web.controller;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.util.StringUtils;
@@ -38,7 +39,7 @@ public class ProjectController {
 
     @GetMapping(value = "/{id}")
     public ProjectDto findOne(@PathVariable Long id) {
-        Project entity = projectService.findById(id).orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        Project entity = projectService.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return convertToDto(entity);
     }
 
@@ -53,7 +54,9 @@ public class ProjectController {
     @GetMapping
     public Collection<ProjectDto> findAll() {
         Iterable<Project> allProjects = this.projectService.findAll();
-        return StreamSupport.stream(allProjects.spliterator(), false).map(this::convertToDto).collect(Collectors.toSet());
+        List<ProjectDto> projectDtos = new ArrayList<>();
+        allProjects.forEach(p -> projectDtos.add(convertToDto(p)));
+        return projectDtos;
     }
 
     @PutMapping("/{id}")
