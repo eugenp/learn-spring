@@ -1,18 +1,17 @@
 package com.baeldung.ls.persistence.repository;
 
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 
 import com.baeldung.ls.persistence.model.Project;
 
-@SpringBootTest(webEnvironment = WebEnvironment.NONE)
+@SpringBootTest
 public class ProjectRepositoryIntegrationTest {
 
     @Autowired

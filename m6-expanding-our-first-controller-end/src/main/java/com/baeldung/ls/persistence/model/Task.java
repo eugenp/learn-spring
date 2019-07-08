@@ -141,7 +141,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task [id=" + id + ", name=" + name + ", status=" + status.getLabel() + "]\n";
+        return "Task [id=" + id + ", name=" + name + ", status=" + status + "]\n";
     }
 
 }

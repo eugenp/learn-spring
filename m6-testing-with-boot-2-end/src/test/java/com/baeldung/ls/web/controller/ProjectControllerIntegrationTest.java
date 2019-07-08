@@ -17,7 +17,7 @@ public class ProjectControllerIntegrationTest {
 
     @Test
     public void whenProjectExists_thenGetSuccess() throws Exception {
-
         mockMvc.perform(get("/projects/1")).andExpect(status().isOk()).andExpect(jsonPath("$.name").value("testName"));
     }
+
 }

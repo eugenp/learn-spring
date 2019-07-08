@@ -12,6 +12,10 @@ import com.baeldung.ls.persistence.model.Project;
 @RequestMapping(value = "/projects")
 public class ProjectController {
 
+    public ProjectController() {
+        super();
+    }
+
     @GetMapping(path = "/1")
     public Project findOne() {
         return new Project("testName", LocalDate.now());
