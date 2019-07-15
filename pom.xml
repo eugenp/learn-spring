@@ -10,14 +10,12 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>m9-an-intro-to-aop-in-spring-start</module>
-        <module>m9-an-intro-to-aop-in-spring-end</module>
+        <module>m9-spring-aop-in-practice-start</module>
+        <module>m9-spring-aop-in-practice-end</module>
         <module>m9-the-spring-expression-language-start</module>
         <module>m9-the-spring-expression-language-end</module>
         <module>m9-working-with-events-and-listeners-start</module>
         <module>m9-working-with-events-and-listeners-end</module>
-        <module>m9-understanding-the-new-reactive-paradigm-start</module>
-        <module>m9-understanding-the-new-reactive-paradigm-end</module>
     </modules>
 
 </project>
