@@ -1,6 +1,5 @@
 package com.baeldung.ls.web.controller;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -49,7 +48,6 @@ public class ProjectController {
     @ResponseStatus(HttpStatus.CREATED)
     public ProjectDto create(@RequestBody ProjectDto newProject) {
         Project entity = convertToEntity(newProject);
-        entity.setDateCreated(LocalDate.now());
         return this.convertToDto(this.projectService.save(entity));
     }
 

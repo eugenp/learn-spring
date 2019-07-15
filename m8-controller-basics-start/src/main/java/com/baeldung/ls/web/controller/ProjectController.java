@@ -1,6 +1,5 @@
 package com.baeldung.ls.web.controller;
 
-import java.time.LocalDate;
 import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
@@ -40,7 +39,6 @@ public class ProjectController {
     @PostMapping
     public void create(@RequestBody ProjectDto newProject) {
         Project entity = convertToEntity(newProject);
-        entity.setDateCreated(LocalDate.now());
         this.projectService.save(entity);
     }
 
