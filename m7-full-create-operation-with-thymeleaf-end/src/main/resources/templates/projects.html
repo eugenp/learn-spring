@@ -3,9 +3,12 @@
 <head>
 
 <title>Projects</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 </head>
 <body>
-	<table>
+	<table class="table col-md-6 ml-3">
 		<thead>
 			<tr>
 				<th>Id</th>
@@ -21,9 +24,9 @@
 			</tr>
 		</tbody>
 	</table>
-	
+
 	<p>
-		<a th:href="@{/projects/new}">New Project</a>
+		<a th:href="@{/projects/new}" class="btn btn-link">New Project</a>
 	</p>
 </body>
 </html>
