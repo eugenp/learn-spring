@@ -32,7 +32,8 @@ public class ProjectController {
 
     @GetMapping(value = "/{id}")
     public ProjectDto findOne(@PathVariable Long id) {
-        Project entity = projectService.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        Project entity = projectService.findById(id)
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return convertToDto(entity);
     }
 
@@ -44,7 +45,10 @@ public class ProjectController {
 
     protected ProjectDto convertToDto(Project entity) {
         ProjectDto dto = new ProjectDto(entity.getId(), entity.getName(), entity.getDateCreated());
-        dto.setTasks(entity.getTasks().stream().map(t -> convertTaskToDto(t)).collect(Collectors.toSet()));
+        dto.setTasks(entity.getTasks()
+            .stream()
+            .map(t -> convertTaskToDto(t))
+            .collect(Collectors.toSet()));
 
         return dto;
     }
@@ -56,7 +60,7 @@ public class ProjectController {
         }
         return project;
     }
-    
+
     protected TaskDto convertTaskToDto(Task entity) {
         TaskDto dto = new TaskDto(entity.getId(), entity.getName(), entity.getDescription(), entity.getDateCreated(), entity.getDueDate(), entity.getStatus());
         return dto;
