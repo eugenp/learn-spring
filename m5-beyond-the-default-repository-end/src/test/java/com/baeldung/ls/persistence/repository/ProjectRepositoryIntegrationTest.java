@@ -50,7 +50,8 @@ public class ProjectRepositoryIntegrationTest {
 
     @Test
     public void givenProjectCreated_whenFindByDateCreatedBetween_thenSuccess() {
-        Project oldProject = new Project(randomAlphabetic(6), LocalDate.now().minusYears(1));
+        Project oldProject = new Project(randomAlphabetic(6), LocalDate.now()
+            .minusYears(1));
         projectRepository.save(oldProject);
 
         Project newProject = new Project(randomAlphabetic(6), LocalDate.now());
@@ -59,7 +60,10 @@ public class ProjectRepositoryIntegrationTest {
         Project newProject2 = new Project(randomAlphabetic(6), LocalDate.now());
         projectRepository.save(newProject2);
 
-        List<Project> retreivedProjects = projectRepository.findByDateCreatedBetween(LocalDate.now().minusDays(1), LocalDate.now().plusDays(1));
+        List<Project> retreivedProjects = projectRepository.findByDateCreatedBetween(LocalDate.now()
+            .minusDays(1),
+            LocalDate.now()
+                .plusDays(1));
         assertThat(retreivedProjects, hasItems(newProject, newProject2));
     }
 }

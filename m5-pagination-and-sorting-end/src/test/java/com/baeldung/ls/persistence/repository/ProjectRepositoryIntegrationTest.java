@@ -36,7 +36,8 @@ public class ProjectRepositoryIntegrationTest {
     public void givenDataCreated_whenFindAllSort_thenSuccess() {
         List<Project> retrievedProjects = (List<Project>) projectRepository.findAll(Sort.by(Order.asc("name")));
 
-        List<Project> sortedProjects = retrievedProjects.stream().collect(Collectors.toList());
+        List<Project> sortedProjects = retrievedProjects.stream()
+            .collect(Collectors.toList());
         sortedProjects.sort(Comparator.comparing(Project::getName));
 
         assertEquals(sortedProjects, retrievedProjects);
