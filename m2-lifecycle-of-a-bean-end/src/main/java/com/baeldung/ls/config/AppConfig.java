@@ -9,21 +9,20 @@ import com.baeldung.ls.persistence.model.BeanC;
 
 @Configuration
 public class AppConfig {
-    
+
     @Bean
     public BeanA beanA() {
         return new BeanA();
     }
 
-    @Bean(initMethod="initialize")
+    @Bean(initMethod = "initialize")
     public BeanB beanB() {
         return new BeanB();
     }
-    
-    @Bean(destroyMethod="destroy")
+
+    @Bean(destroyMethod = "destroy")
     public BeanC beanC() {
         return new BeanC();
     }
 
-    
 }

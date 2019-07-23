@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.Random;
 
 public class Project {
-    
+
     private Long id;
 
     private String name;
