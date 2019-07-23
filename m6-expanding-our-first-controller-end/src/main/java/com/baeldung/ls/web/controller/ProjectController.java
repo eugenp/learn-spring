@@ -26,7 +26,8 @@ public class ProjectController {
 
     @GetMapping(value = "/{id}")
     public Project findOne(@PathVariable Long id) {
-        return projectService.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        return projectService.findById(id)
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping
