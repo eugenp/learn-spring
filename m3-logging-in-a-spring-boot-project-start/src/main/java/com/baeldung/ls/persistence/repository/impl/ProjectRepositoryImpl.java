@@ -11,12 +11,14 @@ import com.baeldung.ls.persistence.repository.IProjectRepository;
 
 @Repository
 public class ProjectRepositoryImpl implements IProjectRepository {
-    
+
     private List<Project> projects = new ArrayList<>();
 
     @Override
     public Optional<Project> findById(Long id) {
-        return projects.stream().filter(p -> p.getId() == id).findFirst();
+        return projects.stream()
+            .filter(p -> p.getId() == id)
+            .findFirst();
     }
 
     @Override

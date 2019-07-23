@@ -21,7 +21,9 @@ public class ProjectRepositoryImpl implements IProjectRepository {
     @Override
     public Optional<Project> findById(Long id) {
         LOG.trace("Project Repository >> Finding Project By Id {}", id);
-        return projects.stream().filter(p -> p.getId() == id).findFirst();
+        return projects.stream()
+            .filter(p -> p.getId() == id)
+            .findFirst();
     }
 
     @Override

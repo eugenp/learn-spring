@@ -20,14 +20,16 @@ public class ProjectRepositoryDBBasedImpl implements IProjectRepository {
 
     private List<Project> projects = new ArrayList<>();
 
-	public ProjectRepositoryDBBasedImpl() {
-		super();
-	}
+    public ProjectRepositoryDBBasedImpl() {
+        super();
+    }
 
     @Override
     public Optional<Project> findById(Long id) {
         LOG.info("Retrieving Project using ProjectRepositoryDBBasedImpl");
-        return projects.stream().filter(p -> p.getId() == id).findFirst();
+        return projects.stream()
+            .filter(p -> p.getId() == id)
+            .findFirst();
     }
 
     @Override

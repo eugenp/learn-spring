@@ -19,6 +19,8 @@
         <module>m3-deploying-a-spring-boot-project</module>
         <module>m3-spring-testing-framework-lesson-start</module>
         <module>m3-spring-testing-framework-lesson-end</module>
+        <module>m3-working-with-property-source-start</module>
+        <module>m3-working-with-property-source-end</module>
     </modules>
 
 </project>
