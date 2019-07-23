@@ -50,7 +50,8 @@ public class ProjectController {
 
     @GetMapping("/{id}")
     public String getProject(@PathVariable Long id, Model model) {
-        Project project = projectService.findById(id).get();
+        Project project = projectService.findById(id)
+            .get();
         model.addAttribute("project", convertToDto(project));
         return "project";
     }
@@ -67,7 +68,8 @@ public class ProjectController {
 
     @GetMapping("/{id}/add-tasks")
     public String getProjectEditPage(@PathVariable Long id, Model model) {
-        Project project = projectService.findById(id).orElse(new Project());
+        Project project = projectService.findById(id)
+            .orElse(new Project());
         model.addAttribute("project", project);
         TaskListDto tasksForm = new TaskListDto();
         for (int i = 1; i <= 3; i++) {
@@ -79,8 +81,12 @@ public class ProjectController {
 
     @PostMapping("{id}/save-tasks")
     public String saveTasks(@ModelAttribute TaskListDto tasksForm, @PathVariable Long id, Model model) {
-        Project project = projectService.findById(id).orElse(new Project());
-        projectService.addTasks(project, tasksForm.getTasks().stream().map(t -> convertTaskToEntity(t)).collect(Collectors.toList()));
+        Project project = projectService.findById(id)
+            .orElse(new Project());
+        projectService.addTasks(project, tasksForm.getTasks()
+            .stream()
+            .map(t -> convertTaskToEntity(t))
+            .collect(Collectors.toList()));
         model.addAttribute("project", project);
 
         return "redirect:/projects/" + project.getId();
@@ -88,7 +94,10 @@ public class ProjectController {
 
     protected ProjectDto convertToDto(Project entity) {
         ProjectDto dto = new ProjectDto(entity.getId(), entity.getName(), entity.getDateCreated());
-        dto.setTasks(entity.getTasks().stream().map(t -> convertTaskToDto(t)).collect(Collectors.toSet()));
+        dto.setTasks(entity.getTasks()
+            .stream()
+            .map(t -> convertTaskToDto(t))
+            .collect(Collectors.toSet()));
         return dto;
     }
 

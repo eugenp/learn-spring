@@ -73,7 +73,7 @@ public class ProjectController {
         }
         return task;
     }
-    
+
     @GetMapping
     public String getProjects(Model model) {
         Iterable<Project> projects = projectService.findAll();

@@ -4,16 +4,17 @@ import java.time.LocalDate;
 import java.util.Set;
 
 public class ProjectDto {
-    
+
     private Long id;
 
     private String name;
 
     private LocalDate dateCreated;
-    
+
     private Set<TaskDto> tasks;
-    
-    public ProjectDto() {}
+
+    public ProjectDto() {
+    }
 
     public ProjectDto(Long id, String name, LocalDate dateCreated) {
         this.id = id;
@@ -52,5 +53,5 @@ public class ProjectDto {
     public void setTasks(Set<TaskDto> tasks) {
         this.tasks = tasks;
     }
-    
+
 }
