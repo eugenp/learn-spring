@@ -1,6 +1,5 @@
 package com.baeldung.ls.web.controller;
 
-import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
@@ -8,7 +7,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -21,7 +19,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -120,34 +117,6 @@ public class ProjectControllerIntegrationTest {
         
         this.mvc.perform(get("/projects/" + createdProject.getId()))
             .andExpect(status().isNotFound());
-        // @formatter:on
-    }
-
-    @Test
-    public void whenGetNonExistingProject_thenHandledResponseRetrieved() throws Exception {
-        // @formatter:off        
-        this.mvc.perform(get("/projects/" + Long.MAX_VALUE))
-            .andExpect(status().isNotFound())
-            .andExpect(status().reason("Project not found"));
-        // @formatter:on
-    }
-
-    @Test
-    public void whenDeleteNonExistingProject_thenHandledResponseRetrieved() throws Exception {
-        // @formatter:off        
-        this.mvc.perform(delete("/projects/" + Long.MAX_VALUE))
-            .andExpect(status().isNotFound())
-            .andExpect(content().string(containsString("Exception retrieving data:")));
-        // @formatter:on
-    }
-
-    @Test
-    public void whenCreateUsingXmlContentType_thenHandledResponseRetrieved() throws Exception {
-        // @formatter:off      
-        this.mvc.perform(post("/projects")
-                .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML_VALUE))
-        .andExpect(status().isUnsupportedMediaType())
-        .andExpect(content().string(containsString("Media Type not supported:")));
         // @formatter:on
     }
 

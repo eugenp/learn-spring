@@ -1,21 +1,14 @@
 package com.baeldung.ls.persistence.model;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.stream.Collectors;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 
 @Entity
-public class Project {
+public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,26 +16,36 @@ public class Project {
 
     private String name;
 
+    private String description;
+
     private LocalDate dateCreated;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "project_id")
-    private Set<Task> tasks;
+    private LocalDate dueDate;
 
-    public Project(String name, LocalDate dateCreated) {
+    private TaskStatus status;
+
+    public Task() {
+
+    }
+
+    public Task(String name, String description, LocalDate dateCreated, LocalDate dueDate) {
         this.name = name;
+        this.description = description;
         this.dateCreated = dateCreated;
-        this.tasks = new HashSet<>();
+        this.dueDate = dueDate;
+        this.status = TaskStatus.TO_DO;
     }
 
-    protected Project() {
+    public Task(String name, String description, LocalDate dateCreated, LocalDate dueDate, TaskStatus status) {
+        this.name = name;
+        this.description = description;
+        this.dateCreated = dateCreated;
+        this.dueDate = dueDate;
+        this.status = status;
     }
 
-    public Project(Project project) {
-        this(project.getName(), project.getDateCreated());
-        this.tasks = project.getTasks()
-            .stream()
-            .collect(Collectors.toSet());
+    public Task(Task task) {
+        this(task.getName(), task.getDescription(), task.getDateCreated(), task.getDueDate());
     }
 
     public Long getId() {
@@ -61,6 +64,14 @@ public class Project {
         this.name = name;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public LocalDate getDateCreated() {
         return dateCreated;
     }
@@ -69,12 +80,20 @@ public class Project {
         this.dateCreated = dateCreated;
     }
 
-    public Set<Task> getTasks() {
-        return tasks;
+    public LocalDate getDueDate() {
+        return dueDate;
     }
 
-    public void setTasks(Set<Task> tasks) {
-        this.tasks = tasks;
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public TaskStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(TaskStatus status) {
+        this.status = status;
     }
 
     @Override
@@ -82,9 +101,11 @@ public class Project {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((dateCreated == null) ? 0 : dateCreated.hashCode());
+        result = prime * result + ((description == null) ? 0 : description.hashCode());
+        result = prime * result + ((dueDate == null) ? 0 : dueDate.hashCode());
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
-        result = prime * result + ((tasks == null) ? 0 : tasks.hashCode());
+        result = prime * result + ((status == null) ? 0 : status.hashCode());
         return result;
     }
 
@@ -96,11 +117,21 @@ public class Project {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Project other = (Project) obj;
+        Task other = (Task) obj;
         if (dateCreated == null) {
             if (other.dateCreated != null)
                 return false;
         } else if (!dateCreated.equals(other.dateCreated))
+            return false;
+        if (description == null) {
+            if (other.description != null)
+                return false;
+        } else if (!description.equals(other.description))
+            return false;
+        if (dueDate == null) {
+            if (other.dueDate != null)
+                return false;
+        } else if (!dueDate.equals(other.dueDate))
             return false;
         if (id == null) {
             if (other.id != null)
@@ -112,17 +143,14 @@ public class Project {
                 return false;
         } else if (!name.equals(other.name))
             return false;
-        if (tasks == null) {
-            if (other.tasks != null)
-                return false;
-        } else if (!tasks.equals(other.tasks))
+        if (status != other.status)
             return false;
         return true;
     }
 
     @Override
     public String toString() {
-        return "Project [id=" + id + ", name=" + name + ", tasks=" + tasks + "] \n";
+        return "Task [id=" + id + ", name=" + name + ", status=" + status + "]\n";
     }
 
 }

@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <description>The &quot;Learn Spring&quot; Course Module 8</description>
@@ -12,6 +13,9 @@
     <modules>
         <module>m8-controller-basics-start</module>
         <module>m8-controller-basics-end</module>
+        <module>m8-controller-request-response</module>
+        <module>m8-exception-handling-start</module>
+        <module>m8-exception-handling-end</module>
         <module>m8-intro-to-the-rest-template-start</module>
         <module>m8-intro-to-the-rest-template-end</module>
     </modules>

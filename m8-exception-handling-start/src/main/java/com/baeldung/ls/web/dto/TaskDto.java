@@ -16,8 +16,9 @@ public class TaskDto {
     private LocalDate dueDate;
 
     private TaskStatus status;
-    
-    public TaskDto () {}
+
+    public TaskDto() {
+    }
 
     public TaskDto(Long id, String name, String description, LocalDate dateCreated, LocalDate dueDate, TaskStatus status) {
         this.id = id;
@@ -75,5 +76,5 @@ public class TaskDto {
     public void setStatus(TaskStatus status) {
         this.status = status;
     }
-    
+
 }
