@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Implementation-Title: basics-of-java-configuration-and-the-spring-cont
+ ext-lesson-start
+Implementation-Version: 0.1.0-SNAPSHOT
+Build-Jdk-Spec: 1.8
+Created-By: Maven Integration for Eclipse
+
