@@ -2,6 +2,8 @@ package com.baeldung.ls.service;
 
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import com.baeldung.ls.persistence.model.Project;
 
 public interface IProjectService {
