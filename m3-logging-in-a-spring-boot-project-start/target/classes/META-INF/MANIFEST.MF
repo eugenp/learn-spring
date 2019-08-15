@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Implementation-Title: logging-in-a-spring-boot-project-lesson-start
+Implementation-Version: 0.1.0-SNAPSHOT
+Build-Jdk-Spec: 1.8
+Created-By: Maven Integration for Eclipse
+
