@@ -14,6 +14,10 @@
         <module>m8-controller-basics-start</module>
         <module>m8-controller-basics-end</module>
         <module>m8-controller-request-response</module>
+        <module>m8-controller-urls-requestparam-start</module>
+        <module>m8-controller-urls-requestparam-end</module>
+        <module>m8-controller-urls-pathvariable-start</module>
+        <module>m8-controller-urls-pathvariable-end</module>
         <module>m8-exception-handling-start</module>
         <module>m8-exception-handling-end</module>
         <module>m8-intro-to-the-rest-template-start</module>
