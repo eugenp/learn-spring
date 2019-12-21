@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <title>Learn Spring | Mustache Template Engine</title>
 </head>
 <body>
@@ -11,13 +12,12 @@
             {{#projects}}
             <h1>{{name}}</h1>
             Tasks:
-            <ol> 
+            <ol>
                 {{#tasks}}
-                    <li>{{name}}: {{description}}</li>
-                {{/tasks}}
+                <li>{{name}}: {{description}}</li> {{/tasks}}
             </ol>
             {{/projects}}
-            </div>
+        </div>
     </div>
 </body>
 </html>

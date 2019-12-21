@@ -1,3 +1,3 @@
+# Module 7 - Templating Engines and Spring MVC
 
-The codebase for the [Learn Spring] course
-
+This is the codebase for Module 7 of [Learn Spring](https://www.baeldung.com/learn-spring-course)
