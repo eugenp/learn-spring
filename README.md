@@ -1,3 +1,3 @@
+# Module 6 - Web Basics and Spring MVC
 
-The codebase for the [Learn Spring] course
-
+This is the codebase for Module 6 of [Learn Spring](https://www.baeldung.com/learn-spring-course)
