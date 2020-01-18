@@ -18,6 +18,8 @@
         <module>m2-lifecycle-of-a-bean-end</module>
         <module>m2-simple-wiring-and-injection-start</module>
         <module>m2-simple-wiring-and-injection-end</module>
+        <module>m2-scopes-of-spring-beans-start</module>
+        <module>m2-scopes-of-spring-beans-end</module>
     </modules>
 
 </project>
