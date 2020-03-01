@@ -39,13 +39,12 @@ public class ProjectRepositoryImpl implements IProjectRepository {
 
         if (existingProject == null) {
             projects.add(project);
-            return project;
         } else {
             projects.remove(existingProject);
             Project newProject = new Project(project);
             projects.add(newProject);
-            return project;
         }
+        return project;
     }
 
     private void updateInternalId(Project project) {

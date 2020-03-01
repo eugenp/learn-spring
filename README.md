@@ -1,3 +1,3 @@
+# Module 3 - Project Configuration
 
-The codebase for the [Learn Spring] course
-
+This is the codebase for Module 3 of [Learn Spring](https://www.baeldung.com/learn-spring-course)
