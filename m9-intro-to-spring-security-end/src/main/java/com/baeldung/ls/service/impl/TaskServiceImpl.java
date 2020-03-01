@@ -1,11 +1,15 @@
 package com.baeldung.ls.service.impl;
 
+import java.util.List;
 import java.util.Optional;
+
+import org.springframework.stereotype.Service;
 
 import com.baeldung.ls.persistence.model.Task;
 import com.baeldung.ls.persistence.repository.ITaskRepository;
 import com.baeldung.ls.service.ITaskService;
 
+@Service
 public class TaskServiceImpl implements ITaskService {
     private ITaskRepository taskRepository;
 
@@ -21,5 +25,10 @@ public class TaskServiceImpl implements ITaskService {
     @Override
     public Task save(Task project) {
         return taskRepository.save(project);
+    }
+
+    @Override
+    public Iterable<Task> saveAll(List<Task> tasks) {
+        return taskRepository.saveAll(tasks);
     }
 }

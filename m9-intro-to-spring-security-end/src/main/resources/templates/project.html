@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Project</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+<body>
+	<div class="container ml-3 mt-3">
+		<h2 class="mb-4">
+			Project <span
+				th:text="${#strings.capitalize(project.name)}+ '('+${project.id} +')'">Name</span>
+		</h2>
+		<h4>
+			<span class="badge badge-primary">Task List</span>
+		</h4>
+		<table class="table col-md-6 ml-3">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Due Date</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${project.tasks.empty}">
+					<td colspan="2">No Tasks Added Yet</td>
+				</tr>
+				<tr th:each="task : ${project.tasks}">
+					<td><span th:text="${task.name}"> Name </span></td>
+					<td><span th:text="${task.dueDate}"> Due Date </span></td>
+					<td><span th:text="${task.status}"> Status </span></td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			<a th:href="@{/projects/{id}/add-tasks(id=${project.id})}">Add
+				New Tasks</a>
+		</p>
+	</div>
+</body>
+</html>
