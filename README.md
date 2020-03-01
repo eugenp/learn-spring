@@ -1,3 +1,3 @@
+# Module 4 - Deep Dive Into Spring Boot 2
 
-The codebase for the [Learn Spring] course
-
+This is the codebase for Module 4 of [Learn Spring](https://www.baeldung.com/learn-spring-course)
