@@ -2,11 +2,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <description>Learn Spring Classes: Module5 - Integration Testing and the Persistence Layer Lesson - Start Point</description>
-    <name>integration-testing-and-the-persistence-layer-start</name>
+    <description>Learn Spring Classes: Module5 - Transactions in Spring Lesson - End Point</description>
+    <name>transactions-in-spring-end</name>
 
     <groupId>com.baeldung</groupId>
-    <artifactId>integration-testing-and-the-persistence-layer-start</artifactId>
+    <artifactId>transactions-in-spring-end</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -50,11 +50,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -64,7 +59,7 @@
             <artifactId>junit-jupiter-engine</artifactId>
             <scope>test</scope>
         </dependency>
-
+		
     </dependencies>
 
     <build>
@@ -72,15 +67,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>**/*LiveTest.java</exclude>
-                    </excludes>
-                </configuration>
             </plugin>
         </plugins>
     </build>

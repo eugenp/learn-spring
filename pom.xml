@@ -20,6 +20,8 @@
         <module>m5-pagination-and-sorting-end</module>
         <module>m5-integration-testing-and-the-persistence-layer-start</module>
         <module>m5-integration-testing-and-the-persistence-layer-end</module>
+        <module>m5-transactions-in-spring-start</module>
+        <module>m5-transactions-in-spring-end</module>
     </modules>
 
 </project>
