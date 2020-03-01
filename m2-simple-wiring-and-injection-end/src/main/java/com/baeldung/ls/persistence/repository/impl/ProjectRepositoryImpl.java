@@ -26,13 +26,12 @@ public class ProjectRepositoryImpl implements IProjectRepository {
         Project existingProject = findById(project.getId()).orElse(null);
         if (existingProject == null) {
             projects.add(project);
-            return project;
         } else {
             projects.remove(existingProject);
             Project newProject = new Project(project);
             projects.add(newProject);
-            return project;
         }
+        return project;
     }
 
 }
