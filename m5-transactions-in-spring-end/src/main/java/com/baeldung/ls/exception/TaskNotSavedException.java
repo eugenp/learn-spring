@@ -1,10 +1,10 @@
 package com.baeldung.ls.exception;
 
-public class TaskNotAddedException extends Exception {
+public class TaskNotSavedException extends Exception {
 
     private static final long serialVersionUID = 1L;
 
-    public TaskNotAddedException(String msg) {
+    public TaskNotSavedException(String msg) {
         super(msg);
     }
 

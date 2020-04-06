@@ -2,7 +2,7 @@ package com.baeldung.ls.service;
 
 import java.util.Optional;
 
-import com.baeldung.ls.exception.TaskNotAddedException;
+import com.baeldung.ls.exception.TaskNotSavedException;
 import com.baeldung.ls.persistence.model.Project;
 
 public interface IProjectService {
@@ -12,5 +12,5 @@ public interface IProjectService {
 
     Project save(Project project);
 
-    Project createProjectWithTasks() throws TaskNotAddedException;
+    void createProjectWithTasks() throws TaskNotSavedException;
 }

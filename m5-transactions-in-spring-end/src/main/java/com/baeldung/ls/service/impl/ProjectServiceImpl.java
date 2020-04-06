@@ -1,32 +1,30 @@
 package com.baeldung.ls.service.impl;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 import javax.transaction.Transactional;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.baeldung.ls.exception.TaskNotAddedException;
+import com.baeldung.ls.exception.TaskNotSavedException;
 import com.baeldung.ls.persistence.model.Project;
 import com.baeldung.ls.persistence.model.Task;
 import com.baeldung.ls.persistence.repository.IProjectRepository;
-import com.baeldung.ls.persistence.repository.ITaskRepository;
 import com.baeldung.ls.service.IProjectService;
+import com.baeldung.ls.service.ITaskService;
 
 @Service
 public class ProjectServiceImpl implements IProjectService {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ProjectServiceImpl.class);
-
     private IProjectRepository projectRepository;
-    private ITaskRepository taskRepository;
+    private ITaskService taskService;
 
-    public ProjectServiceImpl(IProjectRepository projectRepository, ITaskRepository taskRepository) {
+    public ProjectServiceImpl(IProjectRepository projectRepository, ITaskService taskService) {
         this.projectRepository = projectRepository;
-        this.taskRepository = taskRepository;
+        this.taskService = taskService;
     }
 
     @Override
@@ -44,22 +42,24 @@ public class ProjectServiceImpl implements IProjectService {
         return projectRepository.save(project);
     }
 
-    @Transactional(rollbackOn = TaskNotAddedException.class)
+    @Transactional(rollbackOn = TaskNotSavedException.class)
     @Override
-    public Project createProjectWithTasks() throws TaskNotAddedException {
+    public void createProjectWithTasks() throws TaskNotSavedException {
         Project project = new Project("Project 1", LocalDate.now());
 
-        LOG.info("Saving Project: {}", project);
-        Project newProject = projectRepository.save(project);
-        LOG.info("New Project Added: {}", project);
-        
+        Project newProject = save(project);
+
         Task task1 = new Task("Task 1", "Project 1 Task 1", LocalDate.now(), LocalDate.now()
             .plusDays(7));
 
-        LOG.info("Saving Task: {}", task1);
-        taskRepository.save(task1);
+        taskService.save(task1);
 
-        return newProject;
+        Set<Task> tasks = new HashSet<>();
+        tasks.add(task1);
+
+        newProject.setTasks(tasks);
+
+        save(newProject);
     }
 
 }
