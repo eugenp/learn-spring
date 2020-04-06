@@ -1,6 +1,7 @@
 package com.baeldung.ls.persistence.model;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.Random;
 
 public class Project {
@@ -11,6 +12,17 @@ public class Project {
 
     private LocalDate dateCreated;
 
+    private String internalId;
+
+    public Project(Long id, String name, LocalDate dateCreated) {
+        if(Objects.isNull(id)) {
+            id = new Random().nextLong();
+        }
+        this.id = id;
+        this.name = name;
+        this.dateCreated = dateCreated;
+    }
+
     public Project(String name, LocalDate dateCreated) {
         this.id = new Random().nextLong();
         this.name = name;
@@ -18,7 +30,7 @@ public class Project {
     }
 
     public Project(Project project) {
-        this(project.getName(), project.getDateCreated());
+        this(project.getId(), project.getName(), project.getDateCreated());
     }
 
     public Long getId() {
@@ -45,6 +57,14 @@ public class Project {
         this.dateCreated = dateCreated;
     }
 
+    public String getInternalId() {
+        return internalId;
+    }
+
+    public void setInternalId(String internalId) {
+        this.internalId = internalId;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -52,6 +72,7 @@ public class Project {
         result = prime * result + ((dateCreated == null) ? 0 : dateCreated.hashCode());
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + ((internalId == null) ? 0 : internalId.hashCode());
         return result;
     }
 
@@ -79,12 +100,17 @@ public class Project {
                 return false;
         } else if (!name.equals(other.name))
             return false;
+        if (internalId == null) {
+            if (internalId != null)
+                return false;
+        } else if (!internalId.equals(other.internalId))
+            return false;
         return true;
     }
 
     @Override
     public String toString() {
-        return "Project [id=" + id + ", name=" + name + "] \n";
+        return "Project [id=" + id + ", name=" + name + ", internalId=" + internalId + "] \n";
     }
 
 }
