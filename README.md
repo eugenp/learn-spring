@@ -1,5 +1,6 @@
-**UPDATE**: The price of "Learn Spring Security OAuth" will permanently change on the 11th of December, along with the upcoming OAuth2 material: http://bit.ly/github-lsso
+This is the codebase for the [Learn Spring](https://www.baeldung.com/learn-spring-course#master-class) course. 
 
 ======
 
-This is the codebase for the [Learn Spring](https://www.baeldung.com/learn-spring-course#master-class) course. 
+**FURTHER STUDY**: Once you learn the basics of Spring and Spring Boot, the next step is either ["Learn Spring Security"](bit.ly/github-lss) or ["REST With Spring"](bit.ly/github-rws), depending on what you need to focus on: 
+
