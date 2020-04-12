@@ -19,7 +19,7 @@ public class ProjectRepositoryImpl implements IProjectRepository {
     }
 
     @Override
-    public Optional<Project> findById(Long id) {
+    public Optional<Project> findById(long id) {
         return projects.stream()
             .filter(p -> p.getId() == id)
             .findFirst();

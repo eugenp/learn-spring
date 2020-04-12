@@ -14,7 +14,7 @@ public class ProjectRepositoryImpl implements IProjectRepository {
     private List<Project> projects = new ArrayList<>();
 
     @Override
-    public Optional<Project> findById(Long id) {
+    public Optional<Project> findById(long id) {
         return projects.stream()
             .filter(p -> p.getId() == id)
             .findFirst();

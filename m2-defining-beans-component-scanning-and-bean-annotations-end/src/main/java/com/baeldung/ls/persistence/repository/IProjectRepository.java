@@ -6,7 +6,7 @@ import com.baeldung.ls.persistence.model.Project;
 
 public interface IProjectRepository {
 
-    Optional<Project> findById(Long id);
+    Optional<Project> findById(long id);
 
     Project save(Project project);
 }
