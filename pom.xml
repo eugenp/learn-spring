@@ -22,7 +22,6 @@
         <module>m8-exception-handling-end</module>
         <module>m8-intro-to-the-rest-template-start</module>
         <module>m8-intro-to-the-rest-template-end</module>
-        <module>m8-reference-project</module>
     </modules>
 
 </project>
