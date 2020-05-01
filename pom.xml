@@ -20,7 +20,6 @@
         <module>m7-full-create-operation-with-thymeleaf-end</module>
         <module>m7-the-basics-of-form-validation-start</module>
         <module>m7-the-basics-of-form-validation-end</module>
-        <module>m7-reference-project</module>
 
     </modules>
 
