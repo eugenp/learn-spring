@@ -1,0 +1,58 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.3.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+    id 'maven-publish'
+}
+
+group = 'com.baeldung'
+version = '0.1.0-SNAPSHOT'
+description = 'reference-project-rest'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            pom {
+                name = 'refernce-project-rest'
+                description = 'Reference Project REST'
+
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'http://www.opensource.org/licenses/mit-license.php'
+                        distribution = 'repo'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = 'eugenp'
+                        name = 'Eugen Paraschiv'
+                        email = 'eugen@baeldung.com'
+                        url = 'https://github.com/eugenp'
+                    }
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    runtimeOnly 'com.h2database:h2'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    filter {
+        excludeTestsMatching "*LiveTest*"
+    }
+    useJUnitPlatform()
+}
