@@ -14,10 +14,6 @@ public class ProjectRepositoryImpl implements IProjectRepository {
 
     private List<Project> projects = new ArrayList<>();
 
-    public ProjectRepositoryImpl() {
-        super();
-    }
-
     @Override
     public Optional<Project> findById(Long id) {
         return projects.stream()
@@ -30,12 +26,13 @@ public class ProjectRepositoryImpl implements IProjectRepository {
         Project existingProject = findById(project.getId()).orElse(null);
         if (existingProject == null) {
             projects.add(project);
+            return project;
         } else {
             projects.remove(existingProject);
             Project newProject = new Project(project);
             projects.add(newProject);
+            return project;
         }
-        return project;
     }
 
 }
