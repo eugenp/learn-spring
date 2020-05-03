@@ -28,7 +28,7 @@ public class ProjectRepositoryImpl implements IProjectRepository {
     public Optional<Project> findById(Long id) {
         LOG.info("Retrieving Project using ProjectRepositoryImpl");
         return projects.stream()
-            .filter(p -> p.getId() == id)
+            .filter(p -> p.getId().equals(id))
             .findFirst();
     }
 
