@@ -35,7 +35,7 @@ public class ProjectRestAPILiveTest {
         ProjectDto newProject = new ProjectDto(1L, "First Project", LocalDate.now());
         ResponseEntity<Void> response = restTemplate.postForEntity(BASE_URL, newProject, Void.class);
 
-        assertTrue(response.getStatusCode() == HttpStatus.OK);
+        assertTrue(response.getStatusCode() == HttpStatus.CREATED);
     }
 
 }
