@@ -22,6 +22,8 @@ public class ProjectController {
         this.projectService = projectService;
     }
 
+    //
+
     @GetMapping(value = "/{id}")
     public Project findOne(@PathVariable Long id) {
         return projectService.findById(id)
@@ -29,8 +31,8 @@ public class ProjectController {
     }
 
     @PostMapping
-    public void create(@RequestBody Project project) {
-        this.projectService.save(project);
+    public void create(@RequestBody Project newProject) {
+        this.projectService.save(newProject);
     }
 
 }

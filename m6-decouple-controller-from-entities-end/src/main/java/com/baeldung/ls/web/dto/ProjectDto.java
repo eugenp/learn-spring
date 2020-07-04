@@ -1,6 +1,6 @@
 package com.baeldung.ls.web.dto;
 
-import java.util.HashSet;
+import java.time.LocalDate;
 import java.util.Set;
 
 public class ProjectDto {
@@ -9,15 +9,17 @@ public class ProjectDto {
 
     private String name;
 
+    private LocalDate dateCreated;
+
     private Set<TaskDto> tasks;
 
     public ProjectDto() {
     }
 
-    public ProjectDto(Long id, String name) {
+    public ProjectDto(Long id, String name, LocalDate dateCreated) {
         this.id = id;
         this.name = name;
-        this.tasks = new HashSet<>();
+        this.dateCreated = dateCreated;
     }
 
     public Long getId() {
@@ -34,6 +36,14 @@ public class ProjectDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public LocalDate getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(LocalDate dateCreated) {
+        this.dateCreated = dateCreated;
     }
 
     public Set<TaskDto> getTasks() {

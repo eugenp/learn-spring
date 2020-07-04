@@ -12,7 +12,7 @@ import com.baeldung.ls.persistence.model.Project;
 @RequestMapping(value = "/projects")
 public class ProjectController {
 
-    @GetMapping("/1")
+    @GetMapping(path = "/1")
     public Project findOne() {
         return new Project("testName", LocalDate.now());
     }

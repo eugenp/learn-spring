@@ -7,12 +7,11 @@ import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import com.baeldung.ls.persistence.model.Project;
-import com.baeldung.ls.spring.TestConfig;
 
-@SpringJUnitConfig(classes = TestConfig.class)
+@SpringBootTest
 public class ProjectRepositoryIntegrationTest {
 
     @Autowired
