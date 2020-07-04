@@ -1,8 +1,7 @@
 package com.baeldung.ls.persistence.repository;
 
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
-import static org.hamcrest.CoreMatchers.hasItems;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -20,7 +19,7 @@ import com.baeldung.ls.persistence.model.Project;
 public class ProjectRepositoryIntegrationTest {
 
     @Autowired
-    private IProjectRepository projectRepository;
+    IProjectRepository projectRepository;
 
     @Test
     public void whenSavingNewProject_thenSuccess() {
@@ -34,9 +33,9 @@ public class ProjectRepositoryIntegrationTest {
         Project newProject = new Project(randomAlphabetic(6), LocalDate.now());
         projectRepository.save(newProject);
 
-        Optional<Project> retrievedProject = projectRepository.findById(newProject.getId());
+        Optional<Project> retreivedProject = projectRepository.findById(newProject.getId());
 
-        assertEquals(retrievedProject.get(), newProject);
+        assertEquals(retreivedProject.get(), newProject);
     }
 
     @Test
@@ -44,9 +43,8 @@ public class ProjectRepositoryIntegrationTest {
         Project newProject = new Project(randomAlphabetic(6), LocalDate.now());
         projectRepository.save(newProject);
 
-        Optional<Project> retrievedProject = projectRepository.findByName(newProject.getName());
-
-        assertEquals(retrievedProject.get(), newProject);
+        Optional<Project> retreivedProject = projectRepository.findByName(newProject.getName());
+        assertEquals(retreivedProject.get(), newProject);
     }
 
     @Test
@@ -61,10 +59,11 @@ public class ProjectRepositoryIntegrationTest {
         Project newProject2 = new Project(randomAlphabetic(6), LocalDate.now());
         projectRepository.save(newProject2);
 
-        List<Project> retrievedProjects = projectRepository.findByDateCreatedBetween(LocalDate.now()
+        List<Project> retreivedProjects = projectRepository.findByDateCreatedBetween(LocalDate.now()
             .minusDays(1),
             LocalDate.now()
                 .plusDays(1));
-        assertThat(retrievedProjects, hasItems(newProject, newProject2));
+
+        assertThat(retreivedProjects).contains(newProject, newProject2);
     }
 }

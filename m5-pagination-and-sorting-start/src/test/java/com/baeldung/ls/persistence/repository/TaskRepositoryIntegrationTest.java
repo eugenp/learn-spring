@@ -1,7 +1,6 @@
 package com.baeldung.ls.persistence.repository;
 
-import static org.hamcrest.Matchers.contains;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -31,6 +30,6 @@ public class TaskRepositoryIntegrationTest {
         taskRepository.save(task4);
 
         List<Task> retreivedTasks = taskRepository.findByNameMatches("High");
-        assertThat(retreivedTasks, contains(task3, task4));
+        assertThat(retreivedTasks).contains(task3, task4);
     }
 }

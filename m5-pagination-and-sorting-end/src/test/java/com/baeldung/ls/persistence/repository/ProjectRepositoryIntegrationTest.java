@@ -1,8 +1,7 @@
 package com.baeldung.ls.persistence.repository;
 
-import static org.hamcrest.Matchers.hasSize;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -29,14 +28,15 @@ public class ProjectRepositoryIntegrationTest {
     public void givenDataCreated_whenFindAllPaginated_thenSuccess() {
         Page<Project> retrievedProjects = projectRepository.findAll(PageRequest.of(0, 2));
 
-        assertThat(retrievedProjects.getContent(), hasSize(2));
+        assertThat(retrievedProjects).hasSize(2);
     }
 
     @Test
     public void givenDataCreated_whenFindAllSort_thenSuccess() {
         List<Project> retrievedProjects = (List<Project>) projectRepository.findAll(Sort.by(Order.asc("name")));
 
-        List<Project> sortedProjects = retrievedProjects.stream()
+        List<Project> sortedProjects = retrievedProjects
+                .stream()
             .collect(Collectors.toList());
         sortedProjects.sort(Comparator.comparing(Project::getName));
 
@@ -45,8 +45,11 @@ public class ProjectRepositoryIntegrationTest {
 
     @Test
     public void givenDataCreated_whenFindAllPaginatedAndSort_thenSuccess() {
-        Page<Project> retrievedProjects = projectRepository.findAll(PageRequest.of(0, 2, Sort.by(Order.asc("name"))));
+        Iterable<Project> retrievedProjects = projectRepository.findAll(PageRequest.of(0, 2, Sort.by(Order.asc("name"))));
 
-        assertThat(retrievedProjects.getContent(), hasSize(2));
+        List<Project> projectList = new ArrayList<>();
+        retrievedProjects.forEach(projectList::add);
+
+        assertThat(projectList).hasSize(2);
     }
 }
