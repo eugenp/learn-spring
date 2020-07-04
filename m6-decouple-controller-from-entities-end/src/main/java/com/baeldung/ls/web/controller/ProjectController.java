@@ -40,12 +40,11 @@ public class ProjectController {
 
     @PostMapping
     public void create(@RequestBody ProjectDto newProject) {
-        Project entity = convertToEntity(newProject);
-        this.projectService.save(entity);
+        this.projectService.save(convertToEntity(newProject));
     }
 
-    protected ProjectDto convertToDto(Project entity) {
-        ProjectDto dto = new ProjectDto(entity.getId(), entity.getName(), entity.getDateCreated());
+    private ProjectDto convertToDto(Project entity) {
+        ProjectDto dto = new ProjectDto(entity.getId(), entity.getName());
         dto.setTasks(entity.getTasks()
             .stream()
             .map(t -> convertTaskToDto(t))
@@ -54,8 +53,8 @@ public class ProjectController {
         return dto;
     }
 
-    protected Project convertToEntity(ProjectDto dto) {
-        Project project = new Project(dto.getName(), dto.getDateCreated());
+    private Project convertToEntity(ProjectDto dto) {
+        Project project = new Project(dto.getName(), null);
         if (!StringUtils.isEmpty(dto.getId())) {
             project.setId(dto.getId());
         }

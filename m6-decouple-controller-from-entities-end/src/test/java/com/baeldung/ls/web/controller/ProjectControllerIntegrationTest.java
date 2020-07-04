@@ -7,7 +7,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -62,7 +61,7 @@ public class ProjectControllerIntegrationTest {
         this.mvc.perform(get("/projects/4"))
             .andExpect(status().isNotFound());
 
-        ProjectDto newProject = new ProjectDto(null, "new project", LocalDate.now());
+        ProjectDto newProject = new ProjectDto(null, "new project");
         this.mvc.perform(post("/projects").contentType(MediaType.APPLICATION_JSON_UTF8)
             .content(asJsonString(newProject)))
             .andExpect(status().isOk())
