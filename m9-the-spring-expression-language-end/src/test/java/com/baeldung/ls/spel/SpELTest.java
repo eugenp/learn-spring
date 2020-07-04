@@ -1,10 +1,10 @@
 package com.baeldung.ls.spel;
 
-import static org.junit.Assert.assertNotNull;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 public class SpELTest {
@@ -13,7 +13,7 @@ public class SpELTest {
     private SpELBeanA spELBeanA;
 
     @Test
-    public void whenSpELBeanAIsInjected_thenExpressionsResolvedCorrectly() {
+    public void whenSpELBeanA_thenAllResolvedCorrectly() {
         assertNotNull(spELBeanA);
     }
 

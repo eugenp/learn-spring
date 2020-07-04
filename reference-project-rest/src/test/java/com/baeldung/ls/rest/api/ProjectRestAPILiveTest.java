@@ -1,12 +1,10 @@
 package com.baeldung.ls.rest.api;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 import java.time.LocalDate;
 
-import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
@@ -26,7 +24,7 @@ public class ProjectRestAPILiveTest {
     public void givenProjectExists_whenGet_thenSuccess() {
         ResponseEntity<ProjectDto> response = restTemplate.getForEntity(BASE_URL + "1", ProjectDto.class);
 
-        assertThat(response.getStatusCodeValue(), Matchers.equalTo(200));
+        assertSame(response.getStatusCodeValue(), HttpStatus.OK);
         assertNotNull(response.getBody());
     }
 
@@ -35,7 +33,7 @@ public class ProjectRestAPILiveTest {
         ProjectDto newProject = new ProjectDto(1L, "First Project", LocalDate.now());
         ResponseEntity<Void> response = restTemplate.postForEntity(BASE_URL, newProject, Void.class);
 
-        assertTrue(response.getStatusCode() == HttpStatus.CREATED);
+        assertSame(response.getStatusCode(), HttpStatus.CREATED);
     }
 
 }
