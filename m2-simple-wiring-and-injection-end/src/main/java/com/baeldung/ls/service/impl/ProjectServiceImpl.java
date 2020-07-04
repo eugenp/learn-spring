@@ -2,6 +2,7 @@ package com.baeldung.ls.service.impl;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.baeldung.ls.persistence.model.Project;
@@ -13,7 +14,7 @@ public class ProjectServiceImpl implements IProjectService {
 
     private IProjectRepository projectRepository;
 
-    public ProjectServiceImpl(IProjectRepository projectRepository) {
+    public ProjectServiceImpl(@Qualifier("projectRepositoryImpl2") IProjectRepository projectRepository) {
         this.projectRepository = projectRepository;
     }
 

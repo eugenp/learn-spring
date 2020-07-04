@@ -2,6 +2,7 @@ package com.baeldung.ls.service.impl;
 
 import java.util.Optional;
 
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import com.baeldung.ls.persistence.model.Project;
@@ -9,6 +10,7 @@ import com.baeldung.ls.persistence.repository.IProjectRepository;
 import com.baeldung.ls.service.IProjectService;
 
 @Service
+@Lazy
 public class ProjectServiceImpl implements IProjectService {
 
     private IProjectRepository projectRepository;
