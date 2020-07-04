@@ -5,6 +5,7 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDate;
+import java.util.Random;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
@@ -32,7 +33,7 @@ public class ProjectRestAPILiveTest {
 
     @Test
     public void givenNewProject_whenCreated_thenSuccess() {
-        ProjectDto newProject = new ProjectDto(1L, "First Project", LocalDate.now());
+        ProjectDto newProject = new ProjectDto(new Random().nextLong(), "First Project", LocalDate.now());
         ResponseEntity<Void> response = restTemplate.postForEntity(BASE_URL, newProject, Void.class);
 
         assertTrue(response.getStatusCode() == HttpStatus.OK);

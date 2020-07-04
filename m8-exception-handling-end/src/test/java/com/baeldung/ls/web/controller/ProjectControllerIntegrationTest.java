@@ -20,7 +20,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -135,16 +134,6 @@ public class ProjectControllerIntegrationTest {
         this.mvc.perform(delete("/projects/" + Long.MAX_VALUE))
             .andExpect(status().isNotFound())
             .andExpect(content().string(containsString("Exception retrieving data:")));
-        // @formatter:on
-    }
-
-    @Test
-    public void whenCreateUsingXmlContentType_thenHandledResponseRetrieved() throws Exception {
-        // @formatter:off      
-        this.mvc.perform(post("/projects")
-                .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_XML_VALUE))
-        .andExpect(status().isUnsupportedMediaType())
-        .andExpect(content().string(containsString("Media Type not supported:")));
         // @formatter:on
     }
 
