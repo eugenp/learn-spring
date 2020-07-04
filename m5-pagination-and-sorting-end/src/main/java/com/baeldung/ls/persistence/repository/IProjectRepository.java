@@ -14,5 +14,4 @@ public interface IProjectRepository extends PagingAndSortingRepository<Project, 
 
     List<Project> findByDateCreatedBetween(LocalDate start, LocalDate end);
 
-    List<Project> findAllByOrderByNameDesc();
 }

@@ -15,19 +15,19 @@ import com.baeldung.ls.persistence.repository.IProjectRepository;
 public class ProjectRepositoryImpl implements IProjectRepository {
 
     @PersistenceContext
-    private EntityManager em;
+    private EntityManager entityManager;
 
     @Transactional
     @Override
     public Optional<Project> findById(Long id) {
-        Project entity = em.find(Project.class, id);
+        Project entity = entityManager.find(Project.class, id);
         return Optional.ofNullable(entity);
     }
 
     @Transactional
     @Override
     public Project save(Project project) {
-        em.persist(project);
+        entityManager.persist(project);
         return project;
     }
 

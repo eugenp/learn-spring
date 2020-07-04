@@ -30,7 +30,7 @@ public class TaskRepositoryIntegrationTest {
         taskRepository.save(task3);
         taskRepository.save(task4);
 
-        List<Task> retreivedTasks = taskRepository.findByNameMatches("High");
-        assertThat(retreivedTasks, contains(task3, task4));
+        List<Task> retrievedTasks = taskRepository.findByNameMatches("High");
+        assertThat(retrievedTasks, contains(task3, task4));
     }
 }

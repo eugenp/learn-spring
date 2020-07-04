@@ -45,11 +45,8 @@ public class ProjectRepositoryIntegrationTest {
 
     @Test
     public void givenDataCreated_whenFindAllPaginatedAndSort_thenSuccess() {
-        Iterable<Project> retrievedProjects = projectRepository.findAll(PageRequest.of(0, 2, Sort.by(Order.asc("name"))));
+        Page<Project> retrievedProjects = projectRepository.findAll(PageRequest.of(0, 2, Sort.by(Order.asc("name"))));
 
-        List<Project> projectList = new ArrayList<>();
-        retrievedProjects.forEach(projectList::add);
-
-        assertThat(projectList, hasSize(2));
+        assertThat(retrievedProjects.getContent(), hasSize(2));
     }
 }

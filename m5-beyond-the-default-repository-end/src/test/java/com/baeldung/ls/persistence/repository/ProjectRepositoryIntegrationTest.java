@@ -20,7 +20,7 @@ import com.baeldung.ls.persistence.model.Project;
 public class ProjectRepositoryIntegrationTest {
 
     @Autowired
-    IProjectRepository projectRepository;
+    private IProjectRepository projectRepository;
 
     @Test
     public void whenSavingNewProject_thenSuccess() {
@@ -34,9 +34,9 @@ public class ProjectRepositoryIntegrationTest {
         Project newProject = new Project(randomAlphabetic(6), LocalDate.now());
         projectRepository.save(newProject);
 
-        Optional<Project> retreivedProject = projectRepository.findById(newProject.getId());
+        Optional<Project> retrievedProject = projectRepository.findById(newProject.getId());
 
-        assertEquals(retreivedProject.get(), newProject);
+        assertEquals(retrievedProject.get(), newProject);
     }
 
     @Test
@@ -44,8 +44,9 @@ public class ProjectRepositoryIntegrationTest {
         Project newProject = new Project(randomAlphabetic(6), LocalDate.now());
         projectRepository.save(newProject);
 
-        Optional<Project> retreivedProject = projectRepository.findByName(newProject.getName());
-        assertEquals(retreivedProject.get(), newProject);
+        Optional<Project> retrievedProject = projectRepository.findByName(newProject.getName());
+
+        assertEquals(retrievedProject.get(), newProject);
     }
 
     @Test
@@ -60,10 +61,10 @@ public class ProjectRepositoryIntegrationTest {
         Project newProject2 = new Project(randomAlphabetic(6), LocalDate.now());
         projectRepository.save(newProject2);
 
-        List<Project> retreivedProjects = projectRepository.findByDateCreatedBetween(LocalDate.now()
+        List<Project> retrievedProjects = projectRepository.findByDateCreatedBetween(LocalDate.now()
             .minusDays(1),
             LocalDate.now()
                 .plusDays(1));
-        assertThat(retreivedProjects, hasItems(newProject, newProject2));
+        assertThat(retrievedProjects, hasItems(newProject, newProject2));
     }
 }

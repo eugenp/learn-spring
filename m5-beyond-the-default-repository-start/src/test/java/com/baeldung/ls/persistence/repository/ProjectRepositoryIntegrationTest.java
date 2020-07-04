@@ -17,7 +17,7 @@ import com.baeldung.ls.persistence.model.Project;
 public class ProjectRepositoryIntegrationTest {
 
     @Autowired
-    IProjectRepository projectRepository;
+    private IProjectRepository projectRepository;
 
     @Test
     public void whenSavingNewProject_thenSuccess() {
@@ -31,9 +31,8 @@ public class ProjectRepositoryIntegrationTest {
         Project newProject = new Project(randomAlphabetic(6), LocalDate.now());
         projectRepository.save(newProject);
 
-        Optional<Project> retreivedProject = projectRepository.findById(newProject.getId());
+        Optional<Project> retrievedProject = projectRepository.findById(newProject.getId());
 
-        assertEquals(retreivedProject.get(), newProject);
+        assertEquals(retrievedProject.get(), newProject);
     }
-
 }
