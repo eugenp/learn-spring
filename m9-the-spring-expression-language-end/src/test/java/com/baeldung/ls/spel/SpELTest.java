@@ -13,7 +13,7 @@ public class SpELTest {
     private SpELBeanA spELBeanA;
 
     @Test
-    public void whenSpELBeanA_thenAllResolvedCorrectly() {
+    public void whenSpELBeanAIsInjected_thenExpressionsResolvedCorrectly() {
         assertNotNull(spELBeanA);
     }
 
