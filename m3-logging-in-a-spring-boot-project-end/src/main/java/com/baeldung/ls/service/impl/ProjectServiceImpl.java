@@ -29,7 +29,7 @@ public class ProjectServiceImpl implements IProjectService {
 
     @Override
     public Project save(Project project) {
-        LOG.debug("Project Service >> Saving Project", project);
+        LOG.debug("Project Service >> Saving Project {}", project);
         return projectRepository.save(project);
     }
 

@@ -13,7 +13,7 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import com.baeldung.ls.persistence.model.Project;
 import com.baeldung.ls.spring.TestConfig;
 
-@SpringJUnitConfig(value = TestConfig.class)
+@SpringJUnitConfig(classes = TestConfig.class)
 public class ProjectServiceIntegrationTest {
 
     @Autowired
