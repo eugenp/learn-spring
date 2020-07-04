@@ -24,4 +24,12 @@ public class ProjectServiceImpl implements IProjectService {
         return projectRepository.save(project);
     }
 
+    public IProjectRepository getProjectRepository() {
+        return projectRepository;
+    }
+
+    public void setProjectRepository(IProjectRepository projectRepository) {
+        this.projectRepository = projectRepository;
+    }
+
 }
