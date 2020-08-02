@@ -24,6 +24,8 @@
         <module>beanPostProcessor-and-beanFactoryPostProcessor-end</module>
         <module>the-spring-application-context-start</module>
         <module>the-spring-application-context-end</module>
+        <module>spring-wiring-resource-and-inject-end</module>
+        <module>spring-wiring-resource-and-inject-start</module>
     </modules>
 
 </project>
