@@ -18,6 +18,7 @@
         <module>m6-testing-with-boot-2-end</module>
         <module>m6-decouple-controller-from-entities-start</module>
         <module>m6-decouple-controller-from-entities-end</module>
+        <module>servlets-and-dispatcherServlet</module>
     </modules>
 
 </project>
