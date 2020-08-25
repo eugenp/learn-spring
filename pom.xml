@@ -20,6 +20,8 @@
         <module>m9-intro-to-spring-security-end</module>
         <module>spring-proxies-start</module>
         <module>spring-proxies-end</module>
+        <module>spring-security-authorization-start</module>
+        <module>spring-security-authorization-end</module>
         <module>reference-project-mvc</module>
         <module>reference-project-rest</module>
     </modules>

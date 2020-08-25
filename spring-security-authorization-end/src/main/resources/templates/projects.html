@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Projects</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+<body>
+	<table class="table col-md-6 ml-3">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Date Created</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="project : ${projects}">
+				<td th:text="${project.id}"></td>
+				<td><a th:href="@{/projects/{id}(id=${project.id})}"
+					th:text="${project.name}"></a></td>
+				<td th:text="${project.dateCreated}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<p>
+		<a th:href="@{/projects/new}" class="btn btn-link">New Project</a>
+	</p>
+</body>
+</html>
