@@ -19,4 +19,14 @@ public class PersistenceConfig {
         return dataSource;
     }
 
+    /* MySQL DataSource bean
+    @Bean
+    public DataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/learn-spring-db");
+        dataSource.setUsername("username");
+        dataSource.setPassword("password");
+        return dataSource;
+    }*/
 }
