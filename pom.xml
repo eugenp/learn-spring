@@ -24,6 +24,8 @@
         <module>spring-security-authorization-end</module>
         <module>reference-project-mvc</module>
         <module>reference-project-rest</module>
+        <module>spring-boot-with-docker-start</module>
+        <module>spring-boot-with-docker-end</module>
     </modules>
 
 </project>
