@@ -10,14 +10,14 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>m9-spring-aop-in-practice-start</module>
-        <module>m9-spring-aop-in-practice-end</module>
+        <module>intro-to-spring-security-start</module>
+        <module>intro-to-spring-security-end</module>
         <module>m9-the-spring-expression-language-start</module>
         <module>m9-the-spring-expression-language-end</module>
         <module>m9-working-with-events-and-listeners-start</module>
         <module>m9-working-with-events-and-listeners-end</module>
-        <module>m9-intro-to-spring-security-start</module>
-        <module>m9-intro-to-spring-security-end</module>
+        <module>spring-aop-in-practice-start</module>
+        <module>spring-aop-in-practice-end</module>
         <module>spring-proxies-start</module>
         <module>spring-proxies-end</module>
         <module>spring-security-authorization-start</module>
