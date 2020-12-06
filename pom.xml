@@ -18,8 +18,8 @@
         <module>m2-lifecycle-of-a-bean-end</module>
         <module>m2-simple-wiring-and-injection-start</module>
         <module>m2-simple-wiring-and-injection-end</module>
-        <module>m2-scopes-of-spring-beans-start</module>
-        <module>m2-scopes-of-spring-beans-end</module>
+        <module>scopes-of-spring-beans-start</module>
+        <module>scopes-of-spring-beans-end</module>
         <module>beanPostProcessor-and-beanFactoryPostProcessor-start</module>
         <module>beanPostProcessor-and-beanFactoryPostProcessor-end</module>
         <module>the-spring-application-context-start</module>
