@@ -19,8 +19,8 @@ public class PersistenceConfig {
         return dataSource;
     }
 
-    /* MySQL DataSource bean
-    @Bean
+    // MySQL DataSource bean
+    /*@Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
@@ -28,5 +28,19 @@ public class PersistenceConfig {
         dataSource.setUsername("username");
         dataSource.setPassword("password");
         return dataSource;
-    }*/
+    }
+    
+     @Bean
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
+      LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+      em.setDataSource(dataSource);
+      em.setPackagesToScan("com.baeldung.ls.persistence.model");
+      JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+      em.setJpaVendorAdapter(vendorAdapter);
+      Properties properties = new Properties();
+      properties.setProperty("hibernate.hbm2ddl.auto", "update");
+      em.setJpaProperties(properties);
+      return em;
+      }*/
+     
 }
