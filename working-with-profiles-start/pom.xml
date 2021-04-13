@@ -2,10 +2,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <description>Learn Spring Classes: Module 3 - The Spring Testing Framework Lesson - Start Point</description>
+    <description>Learn Spring - Working With Profiles - Start</description>
+    <name>working-with-profiles-lesson-start</name>
 
     <groupId>com.baeldung</groupId>
-    <artifactId>spring-testing-framework-lesson-start</artifactId>
+    <artifactId>working-with-profiles-lesson-start</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -38,7 +39,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
     </dependencies>
 
     <build>

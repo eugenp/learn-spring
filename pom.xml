@@ -10,15 +10,15 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>m3-working-with-properties-start</module>
-        <module>m3-working-with-properties-end</module>
-        <module>m3-working-with-profiles-start</module>
-        <module>m3-working-with-profiles-end</module>
-        <module>m3-logging-in-a-spring-boot-project-start</module>
-        <module>m3-logging-in-a-spring-boot-project-end</module>
-        <module>m3-deploying-a-spring-boot-project</module>
-        <module>m3-spring-testing-framework-lesson-start</module>
-        <module>m3-spring-testing-framework-lesson-end</module>
+        <module>working-with-properties-start</module>
+        <module>working-with-properties-end</module>
+        <module>working-with-profiles-start</module>
+        <module>working-with-profiles-end</module>
+        <module>logging-in-a-spring-boot-project-start</module>
+        <module>logging-in-a-spring-boot-project-end</module>
+        <module>deploying-a-spring-boot-project</module>
+        <module>spring-testing-framework-lesson-start</module>
+        <module>spring-testing-framework-lesson-end</module>
         <module>working-with-property-source-start</module>
         <module>working-with-property-source-end</module>
     </modules>

@@ -2,11 +2,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <description>Learn Spring Classes: Module 3 - Working With Properties Lesson</description>
-    <name>ls-working-with-properties-lesson-end</name>
+    <description>Learn Spring - Logging in a Spring Boot Project - the Right Way - Start</description>
+    <name>logging-in-a-spring-boot-project-lesson-start</name>
 
     <groupId>com.baeldung</groupId>
-    <artifactId>ls-working-with-properties-lesson-end</artifactId>
+    <artifactId>logging-in-a-spring-boot-project-lesson-start</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
