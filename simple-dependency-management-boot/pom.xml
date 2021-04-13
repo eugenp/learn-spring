@@ -2,11 +2,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <description>Learn Spring Classes: Module4 - Actuators in Boot 2 Lesson - Start Point</description>
-    <name>actuators-in-boot-2-lesson-start</name>
+    <description>Learn Spring - Template</description>
+    <name>simple-dependency-management-boot-lesson</name>
 
     <groupId>com.baeldung</groupId>
-    <artifactId>actuators-in-boot-2-lesson-start</artifactId>
+    <artifactId>simple-dependency-management-boot-lesson</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
