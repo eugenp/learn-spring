@@ -16,12 +16,12 @@
         <module>controller-urls-requestparam-end</module>
         <module>controller-urls-pathvariable-start</module>
         <module>controller-urls-pathvariable-end</module>
-        <module>m8-controller-basics-start</module>
-        <module>m8-controller-basics-end</module>
-        <module>m8-exception-handling-start</module>
-        <module>m8-exception-handling-end</module>
-        <module>m8-intro-to-the-rest-template-start</module>
-        <module>m8-intro-to-the-rest-template-end</module>
+        <module>controller-basics-start</module>
+        <module>controller-basics-end</module>
+        <module>exception-handling-start</module>
+        <module>exception-handling-end</module>
+        <module>intro-to-the-rest-template-start</module>
+        <module>intro-to-the-rest-template-end</module>
     </modules>
 
 </project>
