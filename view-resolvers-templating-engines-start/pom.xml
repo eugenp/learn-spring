@@ -2,11 +2,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <description>Learn Spring Classes: Module 7 Spring MVC with the FreeMarker Template Engine - Start Point</description>
-    <name>spring-mvc-freemarker-template-engine-start</name>
+    <description>Learn Spring - View, View Resolvers and Templating Engines - Start</description>
+    <name>view-resolvers-templating-engines-start</name>
 
     <groupId>com.baeldung</groupId>
-    <artifactId>spring-mvc-freemarker-template-engine-start</artifactId>
+    <artifactId>view-resolvers-templating-engines-start</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
