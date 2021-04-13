@@ -2,11 +2,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <description>Learn Spring Classes: Module 6 - Lesson TODO</description>
-    <name>what-is-spring-mvc-lesson-end</name>
+    <description>Learn Spring - Expanding our First Controller - Start</description>
+    <name>expanding-our-first-controller-start</name>
 
     <groupId>com.baeldung</groupId>
-    <artifactId>what-is-spring-mvc-lesson-end</artifactId>
+    <artifactId>expanding-our-first-controller-start</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
