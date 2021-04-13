@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>m1-real-world-project</module>
+        <module>real-world-project</module>
     </modules>
 
 </project>
