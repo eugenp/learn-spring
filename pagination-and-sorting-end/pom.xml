@@ -2,11 +2,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <description>Learn Spring Classes: Module5 - Pagination and Sorting Lesson - Start Point</description>
-    <name>pagination-and-sorting-start</name>
+    <description>Learn Spring - Pagination and Sorting - End</description>
+    <name>pagination-and-sorting-end</name>
 
     <groupId>com.baeldung</groupId>
-    <artifactId>pagination-and-sorting-start</artifactId>
+    <artifactId>pagination-and-sorting-end</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 

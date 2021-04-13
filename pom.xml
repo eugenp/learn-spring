@@ -10,14 +10,14 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>m5-project-persistence-with-spring-data-jpa-start</module>
-        <module>m5-project-persistence-with-spring-data-jpa-end</module>
-        <module>m5-beyond-the-default-repository-start</module>
-        <module>m5-beyond-the-default-repository-end</module>
-        <module>m5-spring-with-jpa-and-hibernate-start</module>
-        <module>m5-spring-with-jpa-and-hibernate-end</module>
-        <module>m5-pagination-and-sorting-start</module>
-        <module>m5-pagination-and-sorting-end</module>
+        <module>project-persistence-with-spring-data-jpa-start</module>
+        <module>project-persistence-with-spring-data-jpa-end</module>
+        <module>beyond-the-default-repository-start</module>
+        <module>beyond-the-default-repository-end</module>
+        <module>spring-with-jpa-and-hibernate-start</module>
+        <module>spring-with-jpa-and-hibernate-end</module>
+        <module>pagination-and-sorting-start</module>
+        <module>pagination-and-sorting-end</module>
         <module>transactions-in-spring-start</module>
         <module>transactions-in-spring-end</module>
         <module>intro-jdbctemplate-start</module>
