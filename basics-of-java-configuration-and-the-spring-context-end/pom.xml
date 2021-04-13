@@ -2,11 +2,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <description>Learn Spring Classes: Module2 - Simple Wiring and Injection Lesson</description>
-    <name>simple-wiring-and-injection-lesson-start</name>
+    <description>Learn Spring - The Basics of Java Configuration and the Spring Context - End</description>
 
     <groupId>com.baeldung</groupId>
-    <artifactId>simple-wiring-and-injection-lesson-start</artifactId>
+    <artifactId>basics-of-java-configuration-and-the-spring-context-lesson-end</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -38,10 +37,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
     </dependencies>
 

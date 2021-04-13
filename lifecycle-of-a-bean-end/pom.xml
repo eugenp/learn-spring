@@ -2,11 +2,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <description>Learn Spring Classes: Module2 - Defining Beans, Component Scanning and Bean Annotations</description>
-    <name>defining-beans-component-scanning-and-bean-annotations-lesson-end</name>
+    <description>Learn Spring - Lifecycle of a Bean - Init and Destroy Hooks- End</description>
 
     <groupId>com.baeldung</groupId>
-    <artifactId>defining-beans-component-scanning-and-bean-annotations-lesson-end</artifactId>
+    <artifactId>lifecycle-of-a-bean-lesson-end</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 

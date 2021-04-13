@@ -10,14 +10,14 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>m2-basics-of-java-configuration-and-the-spring-context-start</module>
-        <module>m2-basics-of-java-configuration-and-the-spring-context-end</module>
-        <module>m2-defining-beans-component-scanning-and-bean-annotations-start</module>
-        <module>m2-defining-beans-component-scanning-and-bean-annotations-end</module>
-        <module>m2-lifecycle-of-a-bean-start</module>
-        <module>m2-lifecycle-of-a-bean-end</module>
-        <module>m2-simple-wiring-and-injection-start</module>
-        <module>m2-simple-wiring-and-injection-end</module>
+        <module>basics-of-java-configuration-and-the-spring-context-start</module>
+        <module>basics-of-java-configuration-and-the-spring-context-end</module>
+        <module>defining-beans-component-scanning-and-bean-annotations-start</module>
+        <module>defining-beans-component-scanning-and-bean-annotations-end</module>
+        <module>lifecycle-of-a-bean-start</module>
+        <module>lifecycle-of-a-bean-end</module>
+        <module>simple-wiring-and-injection-start</module>
+        <module>simple-wiring-and-injection-end</module>
         <module>scopes-of-spring-beans-start</module>
         <module>scopes-of-spring-beans-end</module>
         <module>beanPostProcessor-and-beanFactoryPostProcessor-start</module>
