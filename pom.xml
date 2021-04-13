@@ -22,6 +22,7 @@
         <module>exception-handling-end</module>
         <module>intro-to-the-rest-template-start</module>
         <module>intro-to-the-rest-template-end</module>
+        <module>http-message-converters-spring-mvc</module>
     </modules>
 
 </project>
