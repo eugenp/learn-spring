@@ -24,7 +24,7 @@ public class ProjectRestAPILiveTest {
     public void givenProjectExists_whenGet_thenSuccess() {
         ResponseEntity<ProjectDto> response = restTemplate.getForEntity(BASE_URL + "1", ProjectDto.class);
 
-        assertSame(response.getStatusCodeValue(), HttpStatus.OK);
+        assertSame(response.getStatusCode(), HttpStatus.OK);
         assertNotNull(response.getBody());
     }
 
