@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>simple-dependency-management-boot</module>
         <module>boot-auto-configuration-start</module>
         <module>boot-auto-configuration-end</module>
         <module>actuators-in-boot-2-start</module>
