@@ -18,6 +18,7 @@
         <module>testing-with-boot-2-end</module>
         <module>decouple-controller-from-entities-start</module>
         <module>decouple-controller-from-entities-end</module>
+        <module>decouple-controller-from-entities-end-kotlin</module>
         <module>servlets-and-dispatcherServlet</module>
     </modules>
 
