@@ -1,3 +1,7 @@
+The Price of all “Learn Spring” course packages will increase by $40 on December 10th.
+
+======
+
 This is the codebase for the [Learn Spring](https://www.baeldung.com/learn-spring-course#master-class) course. 
 
 ======
