@@ -1,4 +1,4 @@
-The Price of all “Learn Spring” course packages will increase by $40 on December 10th.
+**UPDATE:** The Price of all “Learn Spring” course packages will increase by $40 on December 10th.
 
 ======
 
