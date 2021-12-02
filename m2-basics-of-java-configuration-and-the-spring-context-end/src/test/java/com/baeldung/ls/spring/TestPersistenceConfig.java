@@ -1,14 +1,13 @@
 package com.baeldung.ls.spring;
 
 import com.baeldung.ls.persistence.repository.IProjectRepository;
-import com.baeldung.ls.service.impl.ProjectServiceImpl;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
 import com.baeldung.ls.persistence.repository.impl.ProjectRepositoryImpl;
+import com.baeldung.ls.service.impl.ProjectServiceImpl;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.annotation.Bean;
 
-@Configuration
-public class PersistenceConfig {
+@TestConfiguration
+public class TestPersistenceConfig {
 
     @Bean
     public IProjectRepository projectRepository() {
