@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/beanPostProcessor-and-beanFactoryPostProcessor-end/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beanPostProcessor-and-beanFactoryPostProcessor-start/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m1-real-world-project/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m1-real-world-project/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m2-basics-of-java-configuration-and-the-spring-context-end/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m2-basics-of-java-configuration-and-the-spring-context-start/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m2-defining-beans-component-scanning-and-bean-annotations-end/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m2-defining-beans-component-scanning-and-bean-annotations-start/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m2-lifecycle-of-a-bean-end/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m2-lifecycle-of-a-bean-start/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m2-simple-wiring-and-injection-end/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m2-simple-wiring-and-injection-start/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/scopes-of-spring-beans-end/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/scopes-of-spring-beans-start/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-wiring-resource-and-inject-end/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-wiring-resource-and-inject-start/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/the-spring-application-context-end/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/the-spring-application-context-start/src/main/java" charset="UTF-8" />
+  </component>
+</project>

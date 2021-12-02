@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/m2-basics-of-java-configuration-and-the-spring-context-end/basics-of-java-configuration-and-the-spring-context-lesson-end.iml" filepath="$PROJECT_DIR$/m2-basics-of-java-configuration-and-the-spring-context-end/basics-of-java-configuration-and-the-spring-context-lesson-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m2-basics-of-java-configuration-and-the-spring-context-start/basics-of-java-configuration-and-the-spring-context-lesson-start.iml" filepath="$PROJECT_DIR$/m2-basics-of-java-configuration-and-the-spring-context-start/basics-of-java-configuration-and-the-spring-context-lesson-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beanPostProcessor-and-beanFactoryPostProcessor-end/beanPostProcessor-and-beanFactoryPostProcessor-end.iml" filepath="$PROJECT_DIR$/beanPostProcessor-and-beanFactoryPostProcessor-end/beanPostProcessor-and-beanFactoryPostProcessor-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beanPostProcessor-and-beanFactoryPostProcessor-start/beanPostProcessor-and-beanFactoryPostProcessor-start.iml" filepath="$PROJECT_DIR$/beanPostProcessor-and-beanFactoryPostProcessor-start/beanPostProcessor-and-beanFactoryPostProcessor-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m2-defining-beans-component-scanning-and-bean-annotations-end/defining-beans-component-scanning-and-bean-annotations-lesson-end.iml" filepath="$PROJECT_DIR$/m2-defining-beans-component-scanning-and-bean-annotations-end/defining-beans-component-scanning-and-bean-annotations-lesson-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m2-defining-beans-component-scanning-and-bean-annotations-start/defining-beans-component-scanning-and-bean-annotations-lesson-start.iml" filepath="$PROJECT_DIR$/m2-defining-beans-component-scanning-and-bean-annotations-start/defining-beans-component-scanning-and-bean-annotations-lesson-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/learn-spring.iml" filepath="$PROJECT_DIR$/.idea/learn-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m2-lifecycle-of-a-bean-end/lifecycle-of-a-bean-lesson-end.iml" filepath="$PROJECT_DIR$/m2-lifecycle-of-a-bean-end/lifecycle-of-a-bean-lesson-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m2-lifecycle-of-a-bean-start/lifecycle-of-a-bean-lesson-start.iml" filepath="$PROJECT_DIR$/m2-lifecycle-of-a-bean-start/lifecycle-of-a-bean-lesson-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scopes-of-spring-beans-end/scopes-of-spring-beans-lesson-end.iml" filepath="$PROJECT_DIR$/scopes-of-spring-beans-end/scopes-of-spring-beans-lesson-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scopes-of-spring-beans-start/scopes-of-spring-beans-lesson-start.iml" filepath="$PROJECT_DIR$/scopes-of-spring-beans-start/scopes-of-spring-beans-lesson-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m2-simple-wiring-and-injection-end/simple-wiring-and-injection-lesson-end.iml" filepath="$PROJECT_DIR$/m2-simple-wiring-and-injection-end/simple-wiring-and-injection-lesson-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/m2-simple-wiring-and-injection-start/simple-wiring-and-injection-lesson-start.iml" filepath="$PROJECT_DIR$/m2-simple-wiring-and-injection-start/simple-wiring-and-injection-lesson-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-wiring-resource-and-inject-end/spring-wiring-using-resource-and-inject-end.iml" filepath="$PROJECT_DIR$/spring-wiring-resource-and-inject-end/spring-wiring-using-resource-and-inject-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-wiring-resource-and-inject-start/spring-wiring-using-resource-and-inject-start.iml" filepath="$PROJECT_DIR$/spring-wiring-resource-and-inject-start/spring-wiring-using-resource-and-inject-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/the-spring-application-context-end/the-spring-application-context-end.iml" filepath="$PROJECT_DIR$/the-spring-application-context-end/the-spring-application-context-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/the-spring-application-context-start/the-spring-application-context-start.iml" filepath="$PROJECT_DIR$/the-spring-application-context-start/the-spring-application-context-start.iml" />
+    </modules>
+  </component>
+</project>

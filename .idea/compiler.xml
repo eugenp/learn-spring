@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="beanPostProcessor-and-beanFactoryPostProcessor-end" />
+        <module name="simple-wiring-and-injection-lesson-start" />
+        <module name="spring-wiring-using-resource-and-inject-end" />
+        <module name="defining-beans-component-scanning-and-bean-annotations-lesson-end" />
+        <module name="lifecycle-of-a-bean-lesson-end" />
+        <module name="the-spring-application-context-start" />
+        <module name="beanPostProcessor-and-beanFactoryPostProcessor-start" />
+        <module name="basics-of-java-configuration-and-the-spring-context-lesson-end" />
+        <module name="the-spring-application-context-end" />
+        <module name="scopes-of-spring-beans-lesson-start" />
+        <module name="lifecycle-of-a-bean-lesson-start" />
+        <module name="simple-wiring-and-injection-lesson-end" />
+        <module name="spring-wiring-using-resource-and-inject-start" />
+        <module name="scopes-of-spring-beans-lesson-end" />
+        <module name="basics-of-java-configuration-and-the-spring-context-lesson-start" />
+        <module name="defining-beans-component-scanning-and-bean-annotations-lesson-start" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="basics-of-java-configuration-and-the-spring-context-lesson-end" target="1.8" />
+      <module name="basics-of-java-configuration-and-the-spring-context-lesson-start" target="1.8" />
+      <module name="beanPostProcessor-and-beanFactoryPostProcessor-end" target="1.8" />
+      <module name="beanPostProcessor-and-beanFactoryPostProcessor-start" target="1.8" />
+      <module name="defining-beans-component-scanning-and-bean-annotations-lesson-end" target="1.8" />
+      <module name="defining-beans-component-scanning-and-bean-annotations-lesson-start" target="1.8" />
+      <module name="learn-spring" target="1.5" />
+      <module name="lifecycle-of-a-bean-lesson-end" target="1.8" />
+      <module name="lifecycle-of-a-bean-lesson-start" target="1.8" />
+      <module name="scopes-of-spring-beans-lesson-end" target="1.8" />
+      <module name="scopes-of-spring-beans-lesson-start" target="1.8" />
+      <module name="simple-wiring-and-injection-lesson-end" target="1.8" />
+      <module name="simple-wiring-and-injection-lesson-start" target="1.8" />
+      <module name="spring-wiring-using-resource-and-inject-end" target="1.8" />
+      <module name="spring-wiring-using-resource-and-inject-start" target="1.8" />
+      <module name="task-management-app-lesson" target="1.8" />
+      <module name="the-spring-application-context-end" target="1.8" />
+      <module name="the-spring-application-context-start" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="basics-of-java-configuration-and-the-spring-context-lesson-end" options="-parameters" />
+      <module name="basics-of-java-configuration-and-the-spring-context-lesson-start" options="-parameters" />
+      <module name="beanPostProcessor-and-beanFactoryPostProcessor-end" options="-parameters" />
+      <module name="beanPostProcessor-and-beanFactoryPostProcessor-start" options="-parameters" />
+      <module name="defining-beans-component-scanning-and-bean-annotations-lesson-end" options="-parameters" />
+      <module name="defining-beans-component-scanning-and-bean-annotations-lesson-start" options="-parameters" />
+      <module name="lifecycle-of-a-bean-lesson-end" options="-parameters" />
+      <module name="lifecycle-of-a-bean-lesson-start" options="-parameters" />
+      <module name="scopes-of-spring-beans-lesson-end" options="-parameters" />
+      <module name="scopes-of-spring-beans-lesson-start" options="-parameters" />
+      <module name="simple-wiring-and-injection-lesson-end" options="-parameters" />
+      <module name="simple-wiring-and-injection-lesson-start" options="-parameters" />
+      <module name="spring-wiring-using-resource-and-inject-end" options="-parameters" />
+      <module name="spring-wiring-using-resource-and-inject-start" options="-parameters" />
+      <module name="task-management-app-lesson" options="-parameters" />
+      <module name="the-spring-application-context-end" options="-parameters" />
+      <module name="the-spring-application-context-start" options="-parameters" />
+    </option>
+  </component>
+</project>
