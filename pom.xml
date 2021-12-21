@@ -22,6 +22,8 @@
         <module>scopes-of-spring-beans-end</module>
         <module>beanPostProcessor-and-beanFactoryPostProcessor-start</module>
         <module>beanPostProcessor-and-beanFactoryPostProcessor-end</module>
+        <module>debugging-and-solving-wiring-exceptions-start</module>
+        <module>debugging-and-solving-wiring-exceptions-end</module>
         <module>the-spring-application-context-start</module>
         <module>the-spring-application-context-end</module>
         <module>spring-wiring-resource-and-inject-end</module>
