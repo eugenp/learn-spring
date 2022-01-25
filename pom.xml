@@ -17,6 +17,7 @@
         <module>logging-in-a-spring-boot-project-start</module>
         <module>logging-in-a-spring-boot-project-end</module>
         <module>deploying-a-spring-boot-project</module>
+        <module>deploying-boot-2-application-other-options</module>
         <module>spring-testing-framework-lesson-start</module>
         <module>spring-testing-framework-lesson-end</module>
         <module>working-with-property-source-start</module>
