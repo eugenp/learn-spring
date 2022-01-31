@@ -22,6 +22,8 @@
         <module>spring-testing-framework-lesson-end</module>
         <module>working-with-property-source-start</module>
         <module>working-with-property-source-end</module>
+        <module>default-properties-start</module>
+        <module>default-properties-end</module>
     </modules>
 
 </project>
