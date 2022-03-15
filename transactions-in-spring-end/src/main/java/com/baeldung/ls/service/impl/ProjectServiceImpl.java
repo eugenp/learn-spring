@@ -5,9 +5,9 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
-import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.baeldung.ls.exception.TaskNotSavedException;
 import com.baeldung.ls.persistence.model.Project;
@@ -42,7 +42,7 @@ public class ProjectServiceImpl implements IProjectService {
         return projectRepository.save(project);
     }
 
-    @Transactional(rollbackOn = TaskNotSavedException.class)
+    @Transactional(rollbackFor = TaskNotSavedException.class)
     @Override
     public void createProjectWithTasks() throws TaskNotSavedException {
         Project project = new Project("Project 1", LocalDate.now());
