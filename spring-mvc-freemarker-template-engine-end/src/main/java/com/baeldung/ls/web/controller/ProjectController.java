@@ -2,11 +2,11 @@ package com.baeldung.ls.web.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -55,7 +55,7 @@ public class ProjectController {
 
     protected Project convertToEntity(ProjectDto dto) {
         Project project = new Project(dto.getName(), dto.getDateCreated());
-        if (!StringUtils.isEmpty(dto.getId())) {
+        if (!Objects.isNull(dto.getId())) {
             project.setId(dto.getId());
         }
         return project;
@@ -68,7 +68,7 @@ public class ProjectController {
 
     protected Task convertTaskToEntity(TaskDto dto) {
         Task task = new Task(dto.getName(), dto.getDescription(), dto.getDateCreated(), dto.getDueDate(), dto.getStatus());
-        if (!StringUtils.isEmpty(dto.getId())) {
+        if (!Objects.isNull(dto.getId())) {
             task.setId(dto.getId());
         }
         return task;
