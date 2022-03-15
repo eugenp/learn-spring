@@ -1,11 +1,11 @@
 package com.baeldung.ls.service.impl;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.StringUtils;
 
 import com.baeldung.ls.persistence.model.Project;
 import com.baeldung.ls.persistence.repository.IProjectRepository;
@@ -28,7 +28,7 @@ public class ProjectServiceImpl implements IProjectService {
     @Override
     @Transactional
     public Project save(Project project) {
-        if (StringUtils.isEmpty(project.getId())) {
+        if (Objects.isNull(project.getId())) {
             project.setDateCreated(LocalDate.now());
         }
         return projectRepository.save(project);

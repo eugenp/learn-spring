@@ -4,12 +4,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
-import com.baeldung.ls.events.ProjectCreatedEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.baeldung.ls.events.ProjectCreatedEvent;
 import com.baeldung.ls.persistence.model.Project;
 import com.baeldung.ls.persistence.model.Task;
 import com.baeldung.ls.service.IProjectService;
@@ -99,7 +99,7 @@ public class ProjectController {
 
     protected Project convertToEntity(ProjectDto dto) {
         Project project = new Project(dto.getName(), dto.getDateCreated());
-        if (!StringUtils.isEmpty(dto.getId())) {
+        if (!Objects.isNull(dto.getId())) {
             project.setId(dto.getId());
         }
         return project;
@@ -112,7 +112,7 @@ public class ProjectController {
 
     protected Task convertTaskToEntity(TaskDto dto) {
         Task task = new Task(dto.getName(), dto.getDescription(), dto.getDateCreated(), dto.getDueDate(), dto.getStatus());
-        if (!StringUtils.isEmpty(dto.getId())) {
+        if (!Objects.isNull(dto.getId())) {
             task.setId(dto.getId());
         }
         return task;

@@ -2,6 +2,7 @@ package com.baeldung.ls.service.impl;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -30,7 +31,7 @@ public class ProjectServiceImpl implements IProjectService {
 
     @Override
     public Project save(Project project) {
-        if (StringUtils.isEmpty(project.getId())) {
+        if (Objects.isNull(project.getId())) {
             project.setDateCreated(LocalDate.now());
         }
         return projectRepository.save(project);
@@ -46,7 +47,7 @@ public class ProjectServiceImpl implements IProjectService {
     public Project addTasks(Project project, List<Task> tasks) {
         project.getTasks()
             .addAll(tasks.stream()
-                .filter(t -> !StringUtils.isEmpty(t.getName()))
+                .filter(t -> StringUtils.hasText(t.getName()))
                 .collect(Collectors.toList()));
         projectRepository.save(project);
 
