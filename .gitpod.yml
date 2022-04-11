@@ -1,0 +1,10 @@
+
+vscode:
+  extensions:
+    - akamud.vscode-theme-onedark
+    - vscjava.vscode-java-debug
+    - ms-azuretools.vscode-docker
+    - vscjava.vscode-java-pack
+    - vscjava.vscode-java-dependency
+    - vscjava.vscode-spring-boot-dashboard
+    - vscjava.vscode-spring-initializr
