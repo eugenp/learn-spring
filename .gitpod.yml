@@ -11,3 +11,4 @@ vscode:
     - Pivotal.vscode-spring-boot
     - vscjava.vscode-spring-initializr
     - vscjava.vscode-java-test
+    - EditorConfig.EditorConfig

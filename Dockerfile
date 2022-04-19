@@ -1,3 +1,6 @@
 FROM gitpod/workspace-full
 
-# add your tools here ...
+LABEL version="0.1.0"
+LABEL com.vfrsoft.containers.image.authors="dholtdev@gmail.com"
+
+RUN 
