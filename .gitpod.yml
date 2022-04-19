@@ -1,3 +1,6 @@
+image:
+  file: .gitpod.Dockerfile
+
 vscode:
   extensions:
     - akamud.vscode-theme-onedark
