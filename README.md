@@ -1,3 +1,3 @@
-# Module 5 - Persistence and Data Access
+# Persistence and Data Access
 
-This is the codebase for Module 5 of [Learn Spring](https://www.baeldung.com/learn-spring-course)
+This is the codebase for Module 'Persistence and Data Access' of [Learn Spring](https://www.baeldung.com/learn-spring-course)
