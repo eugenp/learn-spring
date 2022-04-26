@@ -1,3 +1,3 @@
-# Module 8 - Building a REST API
+# Building a REST API
 
-This is the codebase for Module 8 of [Learn Spring](https://www.baeldung.com/learn-spring-course)
+This is the codebase for Module 'Building a REST API' of [Learn Spring](https://www.baeldung.com/learn-spring-course)
