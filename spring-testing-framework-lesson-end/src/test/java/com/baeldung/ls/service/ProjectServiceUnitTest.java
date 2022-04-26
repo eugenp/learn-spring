@@ -5,6 +5,7 @@ import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -23,9 +24,16 @@ public class ProjectServiceUnitTest {
     @InjectMocks
     ProjectServiceImpl projectService;
 
+    private AutoCloseable closeable;
+
     @BeforeEach
-    public void initMocks() {
-        MockitoAnnotations.initMocks(this);
+    public void openMocks() {
+        closeable = MockitoAnnotations.openMocks(this);
+    }
+
+    @AfterEach
+    public void releaseMocks() throws Exception {
+        closeable.close();
     }
 
     @Test
