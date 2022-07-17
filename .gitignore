@@ -19,5 +19,20 @@
 *.tar.gz
 *.rar
 
+#folders#
+target/
+/neoDb*
+/data
+/src/main/webapp/WEB-INF/classes
+*/META-INF/*
+.settings
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# classpath and project files
+.classpath
+.project
+
+# Mac folder directory meta file
+.DS_Store
