@@ -63,7 +63,7 @@
 
         <!-- non-dependencies -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
+        <java.version>16</java.version>
         <h2.version>1.4.199</h2.version>
     </properties>
 
