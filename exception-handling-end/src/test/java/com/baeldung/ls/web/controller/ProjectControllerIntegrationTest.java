@@ -93,16 +93,16 @@ public class ProjectControllerIntegrationTest {
     public void givenDefaultProjectsPersisted_whenUpdateProject_thenGetEndpointRetrieveEntity() throws Exception {
         // @formatter:off
         ProjectDto createdProject = createProject();
-        ProjectDto updatedProject = new ProjectDto(createdProject.getId(), "updated project", LocalDate.now());
+        ProjectDto updatedProject = new ProjectDto(createdProject.id(), "updated project", LocalDate.now());
         
-        this.mvc.perform(put("/projects/" + createdProject.getId()).
+        this.mvc.perform(put("/projects/" + createdProject.id()).
                 contentType(MediaType.APPLICATION_JSON_UTF8).
                 content(asJsonString(updatedProject)))
             .andExpect(status().isOk());
         
-        this.mvc.perform(get("/projects/" + createdProject.getId()))
+        this.mvc.perform(get("/projects/" + createdProject.id()))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$.id", is(createdProject.getId().intValue())))
+            .andExpect(jsonPath("$.id", is(createdProject.id().intValue())))
             .andExpect(jsonPath("$.name", is("updated project")));
         // @formatter:on
     }
@@ -112,10 +112,10 @@ public class ProjectControllerIntegrationTest {
         // @formatter:off
         ProjectDto createdProject = createProject();
         
-        this.mvc.perform(delete("/projects/" + createdProject.getId()))
+        this.mvc.perform(delete("/projects/" + createdProject.id()))
             .andExpect(status().isNoContent());
         
-        this.mvc.perform(get("/projects/" + createdProject.getId()))
+        this.mvc.perform(get("/projects/" + createdProject.id()))
             .andExpect(status().isNotFound());
         // @formatter:on
     }
@@ -159,9 +159,9 @@ public class ProjectControllerIntegrationTest {
             .andExpect(status().isCreated()).andReturn();
         
         ProjectDto createdProject = reader.readValue(mvcResult.getResponse().getContentAsByteArray());
-        this.mvc.perform(get("/projects/" + createdProject.getId()))
+        this.mvc.perform(get("/projects/" + createdProject.id()))
             .andExpect(status().isOk())
-            .andExpect(jsonPath("$.id", is(createdProject.getId().intValue())))
+            .andExpect(jsonPath("$.id", is(createdProject.id().intValue())))
             .andExpect(jsonPath("$.name", is("new project")));
         
         return createdProject;

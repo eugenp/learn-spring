@@ -72,32 +72,29 @@ public class ProjectController {
     }
 
     protected ProjectDto convertToDto(Project entity) {
-        ProjectDto dto = new ProjectDto(entity.getId(), entity.getName(), entity.getDateCreated());
-        dto.setTasks(entity.getTasks()
-            .stream()
-            .map(t -> convertTaskToDto(t))
-            .collect(Collectors.toSet()));
-
-        return dto;
+        return new ProjectDto(entity.getId(), entity.getName(), entity.getDateCreated(),
+            entity.getTasks()
+                .stream()
+                .map(t -> convertTaskToDto(t))
+                .collect(Collectors.toSet()));
     }
 
     protected Project convertToEntity(ProjectDto dto) {
-        Project project = new Project(dto.getName(), dto.getDateCreated());
-        if (!Objects.isNull(dto.getId())) {
-            project.setId(dto.getId());
+        Project project = new Project(dto.name(), dto.dateCreated());
+        if (!Objects.isNull(dto.id())) {
+            project.setId(dto.id());
         }
         return project;
     }
 
     protected TaskDto convertTaskToDto(Task entity) {
-        TaskDto dto = new TaskDto(entity.getId(), entity.getName(), entity.getDescription(), entity.getDateCreated(), entity.getDueDate(), entity.getStatus());
-        return dto;
+        return new TaskDto(entity.getId(), entity.getName(), entity.getDescription(), entity.getDateCreated(), entity.getDueDate(), entity.getStatus());
     }
 
     protected Task convertTaskToEntity(TaskDto dto) {
-        Task task = new Task(dto.getName(), dto.getDescription(), dto.getDateCreated(), dto.getDueDate(), dto.getStatus());
-        if (!Objects.isNull(dto.getId())) {
-            task.setId(dto.getId());
+        Task task = new Task(dto.name(), dto.description(), dto.dateCreated(), dto.dueDate(), dto.status());
+        if (!Objects.isNull(dto.id())) {
+            task.setId(dto.id());
         }
         return task;
     }
