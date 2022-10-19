@@ -2,6 +2,7 @@ package com.baeldung.ls.persistence.repository.impl;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,9 @@ public class ProjectRepositoryImpl implements IProjectRepository {
 
     @Override
     public Optional<Project> findById(Long id) {
-        Project project = jdbcTemplate.queryForObject("SELECT id, name, date_created from project where id = ?", (resultSet, rowNum) -> new Project(resultSet.getLong("id"), resultSet.getString("name"), resultSet.getDate("date_created")
+        List<Project> projects = jdbcTemplate.query("SELECT id, name, date_created from project where id = ?", (resultSet, rowNum) -> new Project(resultSet.getLong("id"), resultSet.getString("name"), resultSet.getDate("date_created")
             .toLocalDate()), id);
-        return Optional.ofNullable(project);
+        return projects.stream().findAny();
     }
 
     @Override
