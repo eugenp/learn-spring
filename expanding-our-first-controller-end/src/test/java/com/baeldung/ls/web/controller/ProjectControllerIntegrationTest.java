@@ -63,7 +63,7 @@ public class ProjectControllerIntegrationTest {
             .andExpect(status().isNotFound());
 
         Project newProject = new Project("new project", LocalDate.now());
-        this.mvc.perform(post("/projects").contentType(MediaType.APPLICATION_JSON_UTF8)
+        this.mvc.perform(post("/projects").contentType(MediaType.APPLICATION_JSON)
             .content(asJsonString(newProject)))
             .andExpect(status().isOk())
             .andReturn();
