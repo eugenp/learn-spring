@@ -75,7 +75,7 @@ public class ProjectControllerIntegrationTest {
         ProjectDto newProject = new ProjectDto(3L, "new project", LocalDate.now());
 
         this.mvc.perform(post("/projects").
-                contentType(MediaType.APPLICATION_JSON_UTF8).
+                contentType(MediaType.APPLICATION_JSON).
                 content(asJsonString(newProject)))
             .andExpect(status().isCreated());
         
@@ -93,7 +93,7 @@ public class ProjectControllerIntegrationTest {
         ProjectDto updatedProject = new ProjectDto(createdProject.id(), "updated project", LocalDate.now());
         
         this.mvc.perform(put("/projects/" + createdProject.id()).
-                contentType(MediaType.APPLICATION_JSON_UTF8).
+                contentType(MediaType.APPLICATION_JSON).
                 content(asJsonString(updatedProject)))
             .andExpect(status().isOk());
         
@@ -123,7 +123,7 @@ public class ProjectControllerIntegrationTest {
                 "new project",
                 LocalDate.now());
         MvcResult mvcResult = this.mvc.perform(post("/projects").
-                contentType(MediaType.APPLICATION_JSON_UTF8).
+                contentType(MediaType.APPLICATION_JSON).
                 content(asJsonString(newProject)))
             .andExpect(status().isCreated()).andReturn();
         
