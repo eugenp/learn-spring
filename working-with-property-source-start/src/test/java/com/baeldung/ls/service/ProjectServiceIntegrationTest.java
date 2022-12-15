@@ -1,11 +1,8 @@
 package com.baeldung.ls.service;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertThat;
-
 import java.time.LocalDate;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
@@ -22,7 +19,7 @@ public class ProjectServiceIntegrationTest {
     @Test
     public void whenSavingProject_thenOK() {
         Project savedProject = projectService.save(new Project("name", LocalDate.now()));
-        assertThat(savedProject, is(notNullValue()));
+        Assertions.assertNotNull(savedProject);
     }
 
 }

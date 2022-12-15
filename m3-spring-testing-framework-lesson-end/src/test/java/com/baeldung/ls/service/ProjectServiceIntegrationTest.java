@@ -1,8 +1,6 @@
 package com.baeldung.ls.service;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.time.LocalDate;
 
@@ -22,7 +20,7 @@ public class ProjectServiceIntegrationTest {
     @Test
     public void whenSavingProject_thenOK() {
         Project savedProject = projectService.save(new Project("name", LocalDate.now()));
-        assertThat(savedProject, is(notNullValue()));
+        assertNotNull(savedProject);
     }
 
 }

@@ -101,7 +101,7 @@ public class Project {
         } else if (!name.equals(other.name))
             return false;
         if (internalId == null) {
-            if (internalId != null)
+            if (other.internalId != null)
                 return false;
         } else if (!internalId.equals(other.internalId))
             return false;
