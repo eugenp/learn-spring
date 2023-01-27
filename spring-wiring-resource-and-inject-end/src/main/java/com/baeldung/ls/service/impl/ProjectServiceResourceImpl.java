@@ -2,7 +2,7 @@ package com.baeldung.ls.service.impl;
 
 import java.util.Optional;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
