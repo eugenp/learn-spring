@@ -2,7 +2,7 @@ package com.baeldung.ls;
 
 import java.time.LocalDate;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
