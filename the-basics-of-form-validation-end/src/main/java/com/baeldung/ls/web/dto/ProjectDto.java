@@ -3,7 +3,7 @@ package com.baeldung.ls.web.dto;
 import java.time.LocalDate;
 import java.util.Set;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 public class ProjectDto {
 
