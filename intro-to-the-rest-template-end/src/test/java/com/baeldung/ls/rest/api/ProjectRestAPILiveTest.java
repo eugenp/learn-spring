@@ -16,13 +16,13 @@ import com.baeldung.ls.web.dto.ProjectDto;
 @SpringBootTest
 public class ProjectRestAPILiveTest {
 
-    private static final String BASE_URL = "http://localhost:8080/projects/";
+    private static final String BASE_URL = "http://localhost:8080/projects";
 
     private RestTemplate restTemplate = new RestTemplate();
 
     @Test
     public void givenProjectExists_whenGet_thenSuccess() {
-        ResponseEntity<ProjectDto> response = restTemplate.getForEntity(BASE_URL + "1", ProjectDto.class);
+        ResponseEntity<ProjectDto> response = restTemplate.getForEntity(BASE_URL + "/1", ProjectDto.class);
 
         assertSame(response.getStatusCode(), HttpStatus.OK);
         assertNotNull(response.getBody());
