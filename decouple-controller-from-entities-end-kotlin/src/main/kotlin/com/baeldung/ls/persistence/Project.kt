@@ -2,7 +2,7 @@ package com.baeldung.ls.persistence
 
 import org.springframework.data.repository.CrudRepository
 import java.time.LocalDate
-import javax.persistence.*
+import jakarta.persistence.*
 
 @Entity
 class Project(
@@ -23,4 +23,4 @@ class Project(
 }
 
 // repository
-interface IProjectRepository : CrudRepository<Project, Long>
+interface IProjectRepository : CrudRepository<Project, Long> 

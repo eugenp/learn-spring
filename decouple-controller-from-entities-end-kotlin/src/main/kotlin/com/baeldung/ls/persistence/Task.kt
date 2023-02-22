@@ -1,11 +1,13 @@
 package com.baeldung.ls.persistence
 
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository
 import java.time.LocalDate
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import java.util.Optional;
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
+import jakarta.persistence.Id
 
 @Entity
 class Task(
@@ -33,4 +35,5 @@ enum class TaskStatus(val label: String) {
 }
 
 //repository
-interface ITaskRepository : PagingAndSortingRepository<Task, Long>
+interface ITaskRepository : PagingAndSortingRepository<Task, Long>, CrudRepository<Task, Long> {
+}
