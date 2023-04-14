@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
-import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
@@ -16,42 +16,34 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.baeldung.ls.persistence.model.Project;
 
 @SpringBootTest
-public class ProjectRepositoryIntegrationTest {
+public class ListProjectRepositoryIntegrationTest {
 
     @Autowired
-    IProjectRepository projectRepository;
+    IListProjectRepository listProjectRepository;
 
     @Test
     public void whenSavingNewProject_thenSuccess() {
         Project newProject = new Project(randomAlphabetic(6), LocalDate.now());
 
-        assertNotNull(projectRepository.save(newProject));
+        assertNotNull(listProjectRepository.save(newProject));
     }
 
     @Test
     public void givenProject_whenFindById_thenSuccess() {
         Project newProject = new Project(randomAlphabetic(6), LocalDate.now());
-        projectRepository.save(newProject);
+        listProjectRepository.save(newProject);
 
-        Optional<Project> retreivedProject = projectRepository.findById(newProject.getId());
+        Optional<Project> retreivedProject = listProjectRepository.findById(newProject.getId());
 
         assertEquals(retreivedProject.get(), newProject);
     }
 
     @Test
-    public void testFindAllWithCrudRepository() {
+    public void testFindAllWithListCrudRepository() {
         Project newProject = new Project(randomAlphabetic(6), LocalDate.now());
-        projectRepository.save(newProject);
-        Iterable<Project> projects = projectRepository.findAll();
-        int iterableSize = 0;
-        if (projects instanceof Collection) {
-            iterableSize = ((Collection<?>) projects).size();
-        } else {
-            for (Project p : projects) {
-                iterableSize++;
-            }
-        }
-        assertTrue(iterableSize >= 0);
+        listProjectRepository.save(newProject);
+        List<Project> projects = listProjectRepository.findAll();
+        assertTrue(projects.size() >= 2);
     }
 
 }

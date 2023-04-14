@@ -1,5 +1,7 @@
 package com.baeldung.ls.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -25,6 +27,14 @@ public class ProjectServiceImpl implements IProjectService {
     @Override
     public Project save(Project project) {
         return projectRepository.save(project);
+    }
+
+    @Override
+    public List<Project> retrieveAll() {
+        Iterable<Project> iterable = projectRepository.findAll();
+        List<Project> projects = new ArrayList<Project>();
+        iterable.forEach(projects::add);
+        return projects;
     }
 
 }
