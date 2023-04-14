@@ -10,7 +10,7 @@ import com.baeldung.ls.config.AppConfig;
 public class LsApp {
 
     public static void main(final String... args) {
-        ConfigurableApplicationContext context = SpringApplication.run(new Class[] { LsApp.class, AppConfig.class }, args);
+        ConfigurableApplicationContext context = SpringApplication.run(LsApp.class, args);
         context.close();
     }
 
