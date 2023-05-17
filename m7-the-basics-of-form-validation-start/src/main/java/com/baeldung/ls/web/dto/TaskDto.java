@@ -2,8 +2,6 @@ package com.baeldung.ls.web.dto;
 
 import java.time.LocalDate;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import com.baeldung.ls.persistence.model.TaskStatus;
 
 public class TaskDto {
@@ -13,10 +11,8 @@ public class TaskDto {
 
     private String description;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dateCreated;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dueDate;
 
     private TaskStatus status;
