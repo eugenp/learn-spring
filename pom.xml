@@ -12,8 +12,8 @@
     <modules>
         <module>m4-boot-auto-configuration-start</module>
         <module>m4-boot-auto-configuration-end</module>
-        <module>m4-actuators-in-boot-2-start</module>
-        <module>m4-actuators-in-boot-2-end</module>
+        <module>m4-actuators-in-boot-start</module>
+        <module>m4-actuators-in-boot-end</module>
         <module>actuator-custom-health-indicator-start</module>
         <module>actuator-custom-health-indicator-end</module>
     </modules>
