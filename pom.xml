@@ -14,8 +14,8 @@
         <module>m6-what-is-spring-mvc-lesson-end</module>
         <module>m6-expanding-our-first-controller-start</module>
         <module>m6-expanding-our-first-controller-end</module>
-        <module>m6-testing-with-boot-2-start</module>
-        <module>m6-testing-with-boot-2-end</module>
+        <module>m6-testing-with-boot-start</module>
+        <module>m6-testing-with-boot-end</module>
         <module>m6-decouple-controller-from-entities-start</module>
         <module>m6-decouple-controller-from-entities-end</module>
 		<module>decouple-controller-from-entities-end-kotlin</module>

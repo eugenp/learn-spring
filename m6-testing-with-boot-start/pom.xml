@@ -2,11 +2,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <description>Learn Spring Classes: Module 6 - Testing With Boot 2 Lesson - End Point</description>
-    <name>testing-with-boot-2-lesson-end</name>
+    <description>Learn Spring Classes: Module 6 - Testing With Boot Lesson - Start Point</description>
+    <name>testing-with-boot-lesson-start</name>
 
     <groupId>com.baeldung</groupId>
-    <artifactId>testing-with-boot-2-lesson-end</artifactId>
+    <artifactId>testing-with-boot-lesson-start</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -89,6 +89,7 @@
         <!-- non-dependencies -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
+
     </properties>
 
 </project>
