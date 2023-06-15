@@ -2,11 +2,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <description>Learn Spring - Deploying Boot 2 Application Other Options</description>
-    <name>deploying-boot-2-application-other-options</name>
+    <description>Learn Spring - Deploying the Boot Application – Other Options</description>
+    <name>deploying-boot-application-other-options</name>
 
     <groupId>com.baeldung</groupId>
-    <artifactId>deploying-boot-2-application-other-options</artifactId>
+    <artifactId>deploying-boot-application-other-options</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 

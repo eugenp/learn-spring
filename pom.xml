@@ -17,7 +17,7 @@
         <module>m3-logging-in-a-spring-boot-project-start</module>
         <module>m3-logging-in-a-spring-boot-project-end</module>
         <module>m3-deploying-a-spring-boot-project</module>
-        <module>deploying-boot-2-application-other-options</module>
+        <module>deploying-boot-application-other-options</module>
         <module>m3-spring-testing-framework-lesson-start</module>
         <module>m3-spring-testing-framework-lesson-end</module>
         <module>working-with-property-source-start</module>
