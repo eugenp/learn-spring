@@ -14,8 +14,8 @@
         <module>what-is-spring-mvc-lesson-end</module>
         <module>expanding-our-first-controller-start</module>
         <module>expanding-our-first-controller-end</module>
-        <module>testing-with-boot-2-start</module>
-        <module>testing-with-boot-2-end</module>
+        <module>testing-with-boot-start</module>
+        <module>testing-with-boot-end</module>
         <module>decouple-controller-from-entities-start</module>
         <module>decouple-controller-from-entities-end</module>
         <module>decouple-controller-from-entities-end-kotlin</module>
