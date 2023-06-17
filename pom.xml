@@ -12,8 +12,8 @@
     <modules>
         <module>boot-auto-configuration-start</module>
         <module>boot-auto-configuration-end</module>
-        <module>actuators-in-boot-2-start</module>
-        <module>actuators-in-boot-2-end</module>
+        <module>actuators-in-boot-start</module>
+        <module>actuators-in-boot-end</module>
         <module>actuator-custom-health-indicator-start</module>
         <module>actuator-custom-health-indicator-end</module>
     </modules>
