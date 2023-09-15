@@ -20,21 +20,21 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
-            .requestMatchers("/login*", "/*css/**")
-            .permitAll()
-            .anyRequest()
-            .authenticated()
-            .and()
-            .formLogin();
+          .requestMatchers("/login*", "/*css/**")
+          .permitAll()
+          .anyRequest()
+          .authenticated()
+          .and()
+          .formLogin();
         return http.build();
     }
 
     @Bean
     public InMemoryUserDetailsManager userDetailsService(PasswordEncoder passwordEncoder) {
         UserDetails user =  User.withUsername("user")
-            .password(passwordEncoder.encode("password"))
-            .roles("USER")
-            .build();
+          .password(passwordEncoder.encode("password"))
+          .roles("USER")
+          .build();
         return new InMemoryUserDetailsManager(user);
     }
 

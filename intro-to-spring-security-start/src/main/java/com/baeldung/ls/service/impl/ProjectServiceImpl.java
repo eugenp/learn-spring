@@ -44,9 +44,9 @@ public class ProjectServiceImpl implements IProjectService {
     @Override
     public Project addTasks(Project project, List<Task> tasks) {
         project.getTasks()
-            .addAll(tasks.stream()
-                .filter(t -> StringUtils.hasText(t.getName()))
-                .collect(Collectors.toList()));
+          .addAll(tasks.stream()
+            .filter(t -> StringUtils.hasText(t.getName()))
+            .collect(Collectors.toList()));
         projectRepository.save(project);
 
         return project;

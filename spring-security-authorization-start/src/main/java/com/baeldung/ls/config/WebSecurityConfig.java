@@ -14,6 +14,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class WebSecurityConfig {
 
+
     public WebSecurityConfig() {
     }
 
@@ -31,7 +32,7 @@ public class WebSecurityConfig {
 
     @Bean
     public InMemoryUserDetailsManager userDetailsService(PasswordEncoder passwordEncoder) {
-        UserDetails user = User.withUsername("user")
+        UserDetails user =  User.withUsername("user")
             .password(passwordEncoder.encode("password"))
             .roles("USER")
             .build();

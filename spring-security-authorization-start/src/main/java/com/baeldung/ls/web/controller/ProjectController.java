@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import jakarta.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,8 +22,6 @@ import com.baeldung.ls.service.IProjectService;
 import com.baeldung.ls.web.dto.ProjectDto;
 import com.baeldung.ls.web.dto.TaskDto;
 import com.baeldung.ls.web.dto.TaskListDto;
-
-import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping(value = "/projects")
