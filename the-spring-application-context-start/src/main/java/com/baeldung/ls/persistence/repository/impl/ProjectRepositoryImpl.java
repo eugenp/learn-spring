@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.baeldung.ls.persistence.model.Project;
 import com.baeldung.ls.persistence.repository.IProjectRepository;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 @Repository
 public class ProjectRepositoryImpl implements IProjectRepository {
