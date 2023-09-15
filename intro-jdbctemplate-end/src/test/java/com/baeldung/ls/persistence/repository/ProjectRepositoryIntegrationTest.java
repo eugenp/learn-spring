@@ -1,6 +1,7 @@
 package com.baeldung.ls.persistence.repository;
 
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -36,4 +37,9 @@ public class ProjectRepositoryIntegrationTest {
         assertEquals(retreivedProject.get(), newProject);
     }
 
+    @Test
+    public void givenNonExistingId_whenFindById_thenEmptyOptional() {
+        Optional<Project> retreivedProject = projectRepository.findById(99L);
+        assertThat(retreivedProject).isEmpty();
+    }
 }
