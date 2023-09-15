@@ -2,7 +2,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <description>Learn Spring Classes: HttpMessageConverters Spring MVC</description>
+    <description>Learn Spring - HttpMessageConverters Spring MVC</description>
     <name>http-message-converters-spring-mvc</name>
 
     <groupId>com.baeldung</groupId>
@@ -63,14 +63,14 @@
 
         <!-- non-dependencies -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <h2.version>1.4.199</h2.version>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.1</version>
+        <version>3.0.5</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
 
