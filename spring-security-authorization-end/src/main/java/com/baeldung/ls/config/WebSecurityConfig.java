@@ -23,16 +23,16 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests()
-            .requestMatchers("/login*", "/*css/**")
-            .permitAll()
-            .requestMatchers(HttpMethod.POST, "/projects")
-            .hasRole("MANAGER")
-            .anyRequest()
-            .authenticated()
-            .and()
-            .formLogin()
-            .defaultSuccessUrl("/projects");
+        http.authorizeHttpRequests((authorize) -> authorize
+                .requestMatchers("/login*", "/*css/**")
+                .permitAll()
+                .requestMatchers(HttpMethod.POST, "/projects")
+                .hasRole("MANAGER")
+                .anyRequest()
+                .authenticated())
+            .formLogin((form) -> form
+                    .permitAll()
+                    .defaultSuccessUrl("/projects"));
         return http.build();
     }
 

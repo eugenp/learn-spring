@@ -2,9 +2,9 @@ package com.baeldung.ls.persistence.model;
 
 public enum TaskStatus {
     //@formatter:off
-    TO_DO("To Do"),
-    IN_PROGRESS("In Progress"),
-    ON_HOLD("On Hold"),
+    TO_DO("To Do"), 
+    IN_PROGRESS("In Progress"), 
+    ON_HOLD("On Hold"), 
     DONE("Done");
     //@formatter:on
 
