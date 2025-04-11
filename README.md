@@ -4,4 +4,4 @@ Note that the code for each course module is hosted on its own branch, you'll ha
 
 ======
 
-**FURTHER STUDY**: Once you learn the basics of Spring and Spring Boot, the next step is either ["Learn Spring Security"](https://bit.ly/github-lss) or ["REST With Spring"](https://bit.ly/github-rws), depending on what you need to focus on: 
+**FURTHER STUDY**: Once you learn the basics of Spring and Spring Boot, the next step is either ["Learn Spring Security"](https://www.baeldung.com/course-lss-td7ng) or ["REST With Spring"](https://www.baeldung.com/course-rws-y5jsm), depending on what you need to focus on: 
